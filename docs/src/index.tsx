@@ -17,9 +17,19 @@ export default function Index() {
             <td><code>solid</code> | <code>outlined</code> | <code>subtle</code></td>
           </tr>
           <tr>
+            <td><code>size</code></td>
+            <td><code>default</code></td>
+            <td><code>small</code> | <code>default</code> | <code>large</code></td>
+          </tr>
+          <tr>
             <td><code>intent</code></td>
-            <td><code>none</code></td>
+            <td></td>
             <td><code>none</code> | <code>danger</code> | <code>warning</code> | <code>success</code> | <code>info</code></td>
+          </tr>
+          <tr>
+            <td><code>sx</code></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
             <td><code>children</code></td>
@@ -31,7 +41,7 @@ export default function Index() {
 
       <h4>Danger</h4>
 
-      <div class="border rounded-md border-1 border-gray-300 p-3">
+      <div class="border rounded-md border-1 border-gray-300 p-3 flex">
         <Badge
           variant="outlined"
           intent="danger"
@@ -61,7 +71,7 @@ export default function Index() {
 
       <h4>Success</h4>
 
-      <div class="border rounded-md border-1 border-gray-300 p-3">
+      <div class="border rounded-md border-1 border-gray-300 p-3 flex">
         <Badge
           variant="outlined"
           intent="success"
@@ -90,7 +100,7 @@ export default function Index() {
 
       <h4>Warning</h4>
 
-      <div class="border rounded-md border-1 border-gray-300 p-3">
+      <div class="border rounded-md border-1 border-gray-300 p-3 flex">
         <Badge
           variant="outlined"
           intent="warning"
@@ -119,7 +129,7 @@ export default function Index() {
 
       <h4>Info</h4>
 
-      <div class="border rounded-md border-1 border-gray-300 p-3">
+      <div class="border rounded-md border-1 border-gray-300 p-3 flex">
         <Badge
           variant="outlined"
           intent="info"
@@ -148,7 +158,7 @@ export default function Index() {
 
       <h4>None</h4>
 
-      <div class="border rounded-md border-1 border-gray-300 p-3">
+      <div class="border rounded-md border-1 border-gray-300 p-3 flex">
         <Badge
           variant="outlined"
           intent="none"
