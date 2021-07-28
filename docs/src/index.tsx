@@ -29,110 +29,152 @@ export default function Index() {
         </tbody>
       </table>
 
-      <Badge
-        variant="outlined"
-        intent="danger"
-      >
-        outlined danger
-      </Badge>
-      <Badge
-        variant="solid"
-        intent="danger"
-      >
-        solid danger
-      </Badge>
-      <Badge
-        variant="subtle"
-        intent="danger"
-      >
-        subtle danger
-      </Badge>
+      <h4>Danger</h4>
 
-      <br />
+      <div class="border rounded-md border-1 border-gray-300 p-3">
+        <Badge
+          variant="outlined"
+          intent="danger"
+          sx={{
+            mr: 2
+          }}
+        >
+          outlined danger
+        </Badge>
 
-      <Badge
-        variant="outlined"
-        intent="success"
-      >
-        outlined success
-      </Badge>
-      <Badge
-        variant="solid"
-        intent="success"
-      >
-        solid success
-      </Badge>
-      <Badge
-        variant="subtle"
-        intent="success"
-      >
-        subtle success
-      </Badge>
+        <Badge
+          variant="solid"
+          intent="danger"
+          sx={{
+            mr: 2
+          }}
+        >
+          solid danger
+        </Badge>
+        <Badge
+          variant="subtle"
+          intent="danger"
+        >
+          subtle danger
+        </Badge>
+      </div>
 
-      <br />
+      <h4>Success</h4>
 
-      <Badge
-        variant="outlined"
-        intent="warning"
-      >
-        outlined warning
-      </Badge>
-      <Badge
-        variant="solid"
-        intent="warning"
-      >
-        solid warning
-      </Badge>
-      <Badge
-        variant="subtle"
-        intent="warning"
-      >
-        subtle warning
-      </Badge>
+      <div class="border rounded-md border-1 border-gray-300 p-3">
+        <Badge
+          variant="outlined"
+          intent="success"
+          sx={{
+            mr: 2
+          }}
+        >
+          outlined success
+        </Badge>
+        <Badge
+          variant="solid"
+          intent="success"
+          sx={{
+            mr: 2
+          }}
+        >
+          solid success
+        </Badge>
+        <Badge
+          variant="subtle"
+          intent="success"
+        >
+          subtle success
+        </Badge>
+      </div>
 
-      <br />
+      <h4>Warning</h4>
 
-      <Badge
-        variant="outlined"
-        intent="info"
-      >
-        outlined info
-      </Badge>
-      <Badge
-        variant="solid"
-        intent="info"
-      >
-        solid info
-      </Badge>
-      <Badge
-        variant="subtle"
-        intent="info"
-      >
-        subtle info
-      </Badge>
+      <div class="border rounded-md border-1 border-gray-300 p-3">
+        <Badge
+          variant="outlined"
+          intent="warning"
+          sx={{
+            mr: 2
+          }}
+        >
+          outlined warning
+        </Badge>
+        <Badge
+          variant="solid"
+          intent="warning"
+          sx={{
+            mr: 2
+          }}
+        >
+          solid warning
+        </Badge>
+        <Badge
+          variant="subtle"
+          intent="warning"
+        >
+          subtle warning
+        </Badge>
+      </div>
 
-      <br />
+      <h4>Info</h4>
 
-      <Badge
-        variant="outlined"
-        intent="none"
-      >
-        outlined none
-      </Badge>
-      <Badge
-        variant="solid"
-        intent="none"
-      >
-        solid none
-      </Badge>
-      <Badge
-        variant="subtle"
-        intent="none"
+      <div class="border rounded-md border-1 border-gray-300 p-3">
+        <Badge
+          variant="outlined"
+          intent="info"
+          sx={{
+            mr: 2
+          }}
+        >
+          outlined info
+        </Badge>
+        <Badge
+          variant="solid"
+          intent="info"
+          sx={{
+            mr: 2
+          }}
+        >
+          solid info
+        </Badge>
+        <Badge
+          variant="subtle"
+          intent="info"
+        >
+          subtle info
+        </Badge>
+      </div>
 
-      >
-        subtle none
-      </Badge>
+      <h4>None</h4>
 
+      <div class="border rounded-md border-1 border-gray-300 p-3">
+        <Badge
+          variant="outlined"
+          intent="none"
+          sx={{
+            mr: 2
+          }}
+        >
+          outlined none
+        </Badge>
+        <Badge
+          variant="solid"
+          intent="none"
+          sx={{
+            mr: 2
+          }}
+        >
+          solid none
+        </Badge>
+        <Badge
+          variant="subtle"
+          intent="none"
+
+        >
+          subtle none
+        </Badge>
+      </div>
     </>
   );
 }
