@@ -23,7 +23,7 @@ export default function Index() {
           </tr>
           <tr>
             <td><code>intent</code></td>
-            <td></td>
+            <td><code>none</code></td>
             <td><code>none</code> | <code>danger</code> | <code>warning</code> | <code>success</code> | <code>info</code></td>
           </tr>
           <tr>
