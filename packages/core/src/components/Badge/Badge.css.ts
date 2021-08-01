@@ -48,19 +48,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['green-700'],
+          [`${colorVar}`]: vars.color['emerald-700'],
         },
       },
-        color: vars.color['green-700'],
       [`${variants.outlined}&`]: {
+        color: vars.color['emerald-700'],
         vars: {
-          [`${colorVar}`]: vars.color['green-700'],
+          [`${colorVar}`]: vars.color['emerald-700'],
         },
       },
-        color: vars.color['green-900'],
       [`${variants.subtle}&`]: {
+        color: vars.color['emerald-900'],
         vars: {
-          [`${colorVar}`]: vars.color['green-200'],
+          [`${colorVar}`]: vars.color['emerald-200'],
         },
       },
     },
@@ -94,19 +94,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['yellow-600'],
+          [`${colorVar}`]: vars.color['amber-600'],
         },
       },
-        color: vars.color['yellow-600'],
       [`${variants.outlined}&`]: {
+        color: vars.color['amber-600'],
         vars: {
-          [`${colorVar}`]: vars.color['yellow-600'],
+          [`${colorVar}`]: vars.color['amber-600'],
         },
       },
-        color: vars.color['yellow-900'],
       [`${variants.subtle}&`]: {
+        color: vars.color['amber-900'],
         vars: {
-          [`${colorVar}`]: vars.color['yellow-200'],
+          [`${colorVar}`]: vars.color['amber-200'],
         },
       },
     },
@@ -140,13 +140,13 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['gray-600'],
+          [`${colorVar}`]: vars.color['gray-500'],
         },
       },
       [`${variants.outlined}&`]: {
         color: vars.color['gray-600'],
         vars: {
-          [`${colorVar}`]: vars.color['gray-600'],
+          [`${colorVar}`]: vars.color['gray-500'],
         },
       },
       [`${variants.subtle}&`]: {
