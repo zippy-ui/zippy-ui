@@ -5,13 +5,13 @@ import { atoms, Atoms } from '../../sprinkles.css';
 export interface BadgeProps {
   size?: Sizes;
   sx?: Atoms;
-  intent: Intents;
+  intent?: Intents;
   variant?: Variants;
   children: any;
 }
 
 export function Badge(props: BadgeProps) {
-  const { children, variant = 'solid', size = 'default', intent, sx = {} } = props;
+  const { children, variant = 'solid', size = 'default', intent = 'none', sx = {} } = props;
   const className = atoms(sx);
 
   return (
