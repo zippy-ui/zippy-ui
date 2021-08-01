@@ -45,20 +45,20 @@ export type Variants = keyof typeof variants;
 export const intents = styleVariants({
   success: {
     selectors: {
-      [`&.${variants.solid}`]: {
+      [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
           [`${colorVar}`]: vars.color['green-700'],
         },
       },
-      [`&.${variants.outlined}`]: {
         color: vars.color['green-700'],
+      [`${variants.outlined}&`]: {
         vars: {
           [`${colorVar}`]: vars.color['green-700'],
         },
       },
-      [`&.${variants.subtle}`]: {
         color: vars.color['green-900'],
+      [`${variants.subtle}&`]: {
         vars: {
           [`${colorVar}`]: vars.color['green-200'],
         },
@@ -68,19 +68,19 @@ export const intents = styleVariants({
 
   danger: {
     selectors: {
-      [`&.${variants.solid}`]: {
+      [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
           [`${colorVar}`]: vars.color['red-700'],
         },
       },
-      [`&.${variants.outlined}`]: {
+      [`${variants.outlined}&`]: {
         color: vars.color['red-700'],
         vars: {
           [`${colorVar}`]: vars.color['red-700'],
         },
       },
-      [`&.${variants.subtle}`]: {
+      [`${variants.subtle}&`]: {
         color: vars.color['red-900'],
         vars: {
           [`${colorVar}`]: vars.color['red-200'],
@@ -91,20 +91,20 @@ export const intents = styleVariants({
 
   warning: {
     selectors: {
-      [`&.${variants.solid}`]: {
+      [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
           [`${colorVar}`]: vars.color['yellow-600'],
         },
       },
-      [`&.${variants.outlined}`]: {
         color: vars.color['yellow-600'],
+      [`${variants.outlined}&`]: {
         vars: {
           [`${colorVar}`]: vars.color['yellow-600'],
         },
       },
-      [`&.${variants.subtle}`]: {
         color: vars.color['yellow-900'],
+      [`${variants.subtle}&`]: {
         vars: {
           [`${colorVar}`]: vars.color['yellow-200'],
         },
@@ -114,19 +114,19 @@ export const intents = styleVariants({
 
   info: {
     selectors: {
-      [`&.${variants.solid}`]: {
+      [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
           [`${colorVar}`]: vars.color['blue-600'],
         },
       },
-      [`&.${variants.outlined}`]: {
+      [`${variants.outlined}&`]: {
         color: vars.color['blue-600'],
         vars: {
           [`${colorVar}`]: vars.color['blue-600'],
         },
       },
-      [`&.${variants.subtle}`]: {
+      [`${variants.subtle}&`]: {
         color: vars.color['blue-900'],
         vars: {
           [`${colorVar}`]: vars.color['blue-200'],
@@ -137,19 +137,19 @@ export const intents = styleVariants({
 
   none: {
     selectors: {
-      [`&.${variants.solid}`]: {
+      [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
           [`${colorVar}`]: vars.color['gray-600'],
         },
       },
-      [`&.${variants.outlined}`]: {
+      [`${variants.outlined}&`]: {
         color: vars.color['gray-600'],
         vars: {
           [`${colorVar}`]: vars.color['gray-600'],
         },
       },
-      [`&.${variants.subtle}`]: {
+      [`${variants.subtle}&`]: {
         color: vars.color['gray-900'],
         vars: {
           [`${colorVar}`]: vars.color['gray-200'],
