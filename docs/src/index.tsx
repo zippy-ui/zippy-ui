@@ -1,10 +1,54 @@
 import { Badge } from '@zippy-ui/core/dist/components/Badge';
+import { Button } from '@zippy-ui/core/dist/components/Button';
 
 export default function Index() {
   return (
     <>
       <h1>⚡ Zippy UI</h1>
       <p class="lead -top-6 relative">Lightning fast components for Solid</p>
+
+      <h3>Button</h3>
+
+      <h4>Success</h4>
+
+      <div class="border rounded-md border-1 border-gray-300 p-3 flex">
+        <Button
+          sx={{ mr: 2 }}
+          intent="success"
+        >
+          solid success
+        </Button>
+
+        <Button
+          variant="outlined"
+          intent="success"
+          sx={{ mr: 2 }}
+        >
+          outlined success
+        </Button>
+
+        <Button
+          variant="subtle"
+          intent="success"
+        >
+          subtle success
+        </Button>
+      </div>
+
+      <h4>None</h4>
+
+      <div class="border rounded-md border-1 border-gray-300 p-3 flex">
+        <Button sx={{ mr: 2 }}>solid none</Button>
+
+        <Button
+          variant="outlined"
+          sx={{ mr: 2 }}
+        >
+          outlined none
+        </Button>
+
+        <Button variant="subtle">subtle none</Button>
+      </div>
 
       <h3>Badge</h3>
 
