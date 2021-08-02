@@ -21,6 +21,20 @@ export const root = style({
   },
 });
 
+export const sizes = styleVariants({
+  small: {
+    fontSize: '.75rem',
+  },
+  default: {
+    fontSize: '1rem',
+  },
+  large: {
+    fontSize: '1.25rem',
+  },
+});
+
+export type Sizes = keyof typeof sizes;
+
 const borderColorVar = createVar();
 
 export const variants = styleVariants({
