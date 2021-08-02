@@ -71,13 +71,13 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['red-700'],
+          [`${colorVar}`]: vars.color['red-600'],
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['red-700'],
+        color: vars.color['red-600'],
         vars: {
-          [`${colorVar}`]: vars.color['red-700'],
+          [`${colorVar}`]: vars.color['red-600'],
         },
       },
       [`${variants.subtle}&`]: {
@@ -117,13 +117,13 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['blue-700'],
+          [`${colorVar}`]: vars.color['blue-600'],
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['blue-700'],
+        color: vars.color['blue-600'],
         vars: {
-          [`${colorVar}`]: vars.color['blue-700'],
+          [`${colorVar}`]: vars.color['blue-600'],
         },
       },
       [`${variants.subtle}&`]: {
@@ -144,7 +144,7 @@ export const intents = styleVariants({
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['coolGray-700'],
+        color: vars.color['coolGray-500'],
         vars: {
           [`${colorVar}`]: vars.color['coolGray-500'],
         },
