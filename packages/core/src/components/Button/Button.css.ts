@@ -15,6 +15,10 @@ export const root = style({
   fontSize: '16px',
   backgroundColor: fallbackVar(bgColorVar, 'none'),
   borderRadius: '0.2em',
+
+  ':focus': {
+    outline: 0,
+  },
 });
 
 const borderColorVar = createVar();
@@ -27,6 +31,8 @@ export const variants = styleVariants({
   subtle: {},
 });
 
+export type Variants = keyof typeof variants;
+
 export const text = style({});
 
 export const intents = styleVariants({
@@ -34,6 +40,7 @@ export const intents = styleVariants({
     selectors: {
       [`${variants.solid}&`]: {
         color: vars.color.white,
+
         vars: {
           [`${bgColorVar}`]: vars.color['emerald-700'],
         },
@@ -49,7 +56,7 @@ export const intents = styleVariants({
         },
       },
       [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .2rem ${vars.color['emerald-200']}`,
+        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['emerald-700']}`,
       },
 
       [`${variants.outlined}&`]: {
@@ -70,6 +77,9 @@ export const intents = styleVariants({
           [`${bgColorVar}`]: vars.color['emerald-200'],
         },
       },
+      [`${variants.outlined}&:focus`]: {
+        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['emerald-700']}`,
+      },
 
       [`${variants.subtle}&`]: {
         color: vars.color['emerald-700'],
@@ -85,6 +95,9 @@ export const intents = styleVariants({
         vars: {
           [`${bgColorVar}`]: vars.color['emerald-200'],
         },
+      },
+      [`${variants.subtle}&:focus`]: {
+        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['emerald-700']}`,
       },
     },
   },
@@ -108,7 +121,7 @@ export const intents = styleVariants({
         },
       },
       [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .2rem ${vars.color['coolGray-300']}`,
+        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['coolGray-500']}`,
       },
 
       [`${variants.outlined}&`]: {
@@ -128,6 +141,9 @@ export const intents = styleVariants({
           [`${bgColorVar}`]: vars.color['coolGray-300'],
         },
       },
+      [`${variants.outlined}&:focus`]: {
+        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['coolGray-500']}`,
+      },
 
       [`${variants.subtle}&`]: {
         color: vars.color['coolGray-700'],
@@ -143,6 +159,11 @@ export const intents = styleVariants({
           [`${bgColorVar}`]: vars.color['coolGray-300'],
         },
       },
+      [`${variants.subtle}&:focus`]: {
+        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['coolGray-500']}`,
+      },
     },
   },
 });
+
+export type Intents = keyof typeof intents;
