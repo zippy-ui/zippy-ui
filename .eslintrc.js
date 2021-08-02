@@ -14,7 +14,6 @@ const sharedReactRules = {
   'react/react-in-jsx-scope': 'off',
   'react/prop-types': 'off',
   'react/jsx-props-no-spreading': 'off',
-  'react-hooks/exhaustive-deps': 'off',
   'react/require-default-props': 'off',
 };
 
@@ -52,11 +51,7 @@ module.exports = {
     {
       files: ['*.tsx'],
 
-      extends: [
-        'airbnb-typescript',
-        'airbnb/hooks',
-        'plugin:prettier/recommended',
-      ],
+      extends: ['airbnb-typescript', 'plugin:prettier/recommended'],
 
       parserOptions: {
         project: path.resolve('./tsconfig.json'),
