@@ -7,7 +7,7 @@ export const root = style({
   verticalAlign: 'middle',
   borderRadius: '.25rem',
   lineHeight: 1,
-  padding: '.35em .65em',
+  padding: '.45em .65em',
   fontWeight: 700,
   border: 0,
 });
