@@ -1,15 +1,27 @@
-import { useRoutes, Link } from 'solid-app-router';
-import Badge from './index';
-import Button from './button';
+import { useRoutes } from 'solid-app-router';
+import Index from './pages/index';
+import Badge from './pages/badge';
+import Button from './pages/button';
+import Components from './pages/components';
 
 const routes = [
   {
     path: '/',
-    component: Badge,
+    component: Index,
   },
   {
-    path: '/button',
-    component: Button,
+    path: '/components',
+    component: Components,
+    children: [
+      {
+        path: 'badge',
+        component: Badge,
+      },
+      {
+        path: 'button',
+        component: Button,
+      },
+    ],
   },
 ];
 
@@ -18,21 +30,18 @@ function App() {
 
   return (
     <>
-      <div class="container mx-auto mt-10 flex">
-        <article class="prose prose-xl">
-          <h2>⚡ Zippy UI</h2>
-          <p class="lead -top-6 relative">Lightning fast components for Solid</p>
-        </article>
-      </div>
-      <div class="container mx-auto mt-10 flex">
-        <div class="flex flex-col w-96 pr-8 -ml-3">
-          <h5 class="px-3 mb-3 uppercase tracking-wide font-semibold text-xs text-gray-900">Components</h5>
-          <Link href="/" class="hover:bg-gray-300 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Badge</Link>
-          <Link href="/button" class="hover:bg-gray-300 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Button</Link>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+        <div className="lg:text-center">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            ⚡ Zippy UI
+          </p>
+          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            Lightning fast components for Solid
+          </p>
         </div>
-        <article class="prose prose-xl">
-          <Routes />
-        </article>
+      </div>
+      <div className="container mx-auto mt-10 flex">
+        <Routes />
       </div>
     </>
   );
