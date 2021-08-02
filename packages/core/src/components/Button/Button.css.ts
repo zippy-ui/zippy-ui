@@ -56,7 +56,7 @@ export const intents = styleVariants({
         color: vars.color.white,
 
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-700'],
+          [`${bgColorVar}`]: vars.color['blue-600'],
         },
       },
       [`${variants.solid}&:hover`]: {
@@ -188,31 +188,31 @@ export const intents = styleVariants({
         color: vars.color.white,
 
         vars: {
-          [`${bgColorVar}`]: vars.color['red-700'],
+          [`${bgColorVar}`]: vars.color['red-600'],
         },
       },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['red-800'],
+          [`${bgColorVar}`]: vars.color['red-700'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['red-900'],
+          [`${bgColorVar}`]: vars.color['red-800'],
         },
       },
       [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['red-700']}`,
+        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['red-600']}`,
       },
 
       [`${variants.outlined}&`]: {
-        color: vars.color['red-700'],
+        color: vars.color['red-600'],
         vars: {
-          [`${borderColorVar}`]: vars.color['red-700'],
+          [`${borderColorVar}`]: vars.color['red-600'],
         },
       },
       [`${variants.outlined}&:hover`]: {
-        color: vars.color['red-800'],
+        color: vars.color['red-700'],
         vars: {
           [`${bgColorVar}`]: vars.color['red-100'],
         },
@@ -224,14 +224,14 @@ export const intents = styleVariants({
         },
       },
       [`${variants.outlined}&:focus`]: {
-        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['red-700']}`,
+        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['red-600']}`,
       },
 
       [`${variants.subtle}&`]: {
-        color: vars.color['red-700'],
+        color: vars.color['red-600'],
       },
       [`${variants.subtle}&:hover`]: {
-        color: vars.color['red-800'],
+        color: vars.color['red-700'],
         vars: {
           [`${bgColorVar}`]: vars.color['red-100'],
         },
@@ -243,7 +243,7 @@ export const intents = styleVariants({
         },
       },
       [`${variants.subtle}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['red-700']}`,
+        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${vars.color['red-600']}`,
       },
     },
   },
