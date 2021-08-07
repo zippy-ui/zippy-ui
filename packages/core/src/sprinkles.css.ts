@@ -74,10 +74,15 @@ const spaceAtoms = createAtomicStyles({
   },
 });
 
+export const lightMode = 'light';
+export const darkMode = 'dark';
+
 const colorAtoms = createAtomicStyles({
   conditions: {
     lightMode: {},
-    darkMode: { '@media': '(prefers-color-scheme: dark)' },
+    darkMode: {
+      selector: `.${darkMode} &`,
+    },
   },
   defaultCondition: 'lightMode',
   properties: {
