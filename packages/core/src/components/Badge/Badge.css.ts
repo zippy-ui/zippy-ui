@@ -48,19 +48,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['emerald-700'],
+          [colorVar]: vars.color['emerald-700'],
         },
       },
       [`${variants.outlined}&`]: {
         color: vars.color['emerald-700'],
         vars: {
-          [`${colorVar}`]: vars.color['emerald-700'],
+          [colorVar]: vars.color['emerald-700'],
         },
       },
       [`${variants.subtle}&`]: {
         color: vars.color['emerald-900'],
         vars: {
-          [`${colorVar}`]: vars.color['emerald-200'],
+          [colorVar]: vars.color['emerald-200'],
         },
       },
     },
@@ -71,19 +71,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['red-600'],
+          [colorVar]: vars.color['red-600'],
         },
       },
       [`${variants.outlined}&`]: {
         color: vars.color['red-600'],
         vars: {
-          [`${colorVar}`]: vars.color['red-600'],
+          [colorVar]: vars.color['red-600'],
         },
       },
       [`${variants.subtle}&`]: {
         color: vars.color['red-900'],
         vars: {
-          [`${colorVar}`]: vars.color['red-200'],
+          [colorVar]: vars.color['red-200'],
         },
       },
     },
@@ -94,19 +94,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['amber-600'],
+          [colorVar]: vars.color['amber-600'],
         },
       },
       [`${variants.outlined}&`]: {
         color: vars.color['amber-600'],
         vars: {
-          [`${colorVar}`]: vars.color['amber-600'],
+          [colorVar]: vars.color['amber-600'],
         },
       },
       [`${variants.subtle}&`]: {
         color: vars.color['amber-900'],
         vars: {
-          [`${colorVar}`]: vars.color['amber-200'],
+          [colorVar]: vars.color['amber-200'],
         },
       },
     },
@@ -117,19 +117,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['blue-600'],
+          [colorVar]: vars.color['blue-600'],
         },
       },
       [`${variants.outlined}&`]: {
         color: vars.color['blue-600'],
         vars: {
-          [`${colorVar}`]: vars.color['blue-600'],
+          [colorVar]: vars.color['blue-600'],
         },
       },
       [`${variants.subtle}&`]: {
         color: vars.color['blue-900'],
         vars: {
-          [`${colorVar}`]: vars.color['blue-200'],
+          [colorVar]: vars.color['blue-200'],
         },
       },
     },
@@ -140,19 +140,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [`${colorVar}`]: vars.color['coolGray-500'],
+          [colorVar]: vars.color['coolGray-500'],
         },
       },
       [`${variants.outlined}&`]: {
         color: vars.color['coolGray-500'],
         vars: {
-          [`${colorVar}`]: vars.color['coolGray-500'],
+          [colorVar]: vars.color['coolGray-500'],
         },
       },
       [`${variants.subtle}&`]: {
         color: vars.color['coolGray-900'],
         vars: {
-          [`${colorVar}`]: vars.color['coolGray-200'],
+          [colorVar]: vars.color['coolGray-200'],
         },
       },
     },

@@ -56,17 +56,17 @@ export const intents = styleVariants({
         color: vars.color.white,
 
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-600'],
+          [bgColorVar]: vars.color['blue-600'],
         },
       },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-700'],
+          [bgColorVar]: vars.color['blue-700'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-800'],
+          [bgColorVar]: vars.color['blue-800'],
         },
       },
       [`${variants.solid}&:focus`]: {
@@ -76,19 +76,19 @@ export const intents = styleVariants({
       [`${variants.outlined}&`]: {
         color: vars.color['blue-600'],
         vars: {
-          [`${borderColorVar}`]: vars.color['blue-600'],
+          [borderColorVar]: vars.color['blue-600'],
         },
       },
       [`${variants.outlined}&:hover`]: {
         color: vars.color['blue-700'],
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-100'],
+          [bgColorVar]: vars.color['blue-100'],
         },
       },
       [`${variants.outlined}&:active`]: {
         color: vars.color['blue-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-200'],
+          [bgColorVar]: vars.color['blue-200'],
         },
       },
       [`${variants.outlined}&:focus`]: {
@@ -101,13 +101,13 @@ export const intents = styleVariants({
       [`${variants.subtle}&:hover`]: {
         color: vars.color['blue-700'],
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-100'],
+          [bgColorVar]: vars.color['blue-100'],
         },
       },
       [`${variants.subtle}&:active`]: {
         color: vars.color['blue-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['blue-200'],
+          [bgColorVar]: vars.color['blue-200'],
         },
       },
       [`${variants.subtle}&:focus`]: {
@@ -122,17 +122,17 @@ export const intents = styleVariants({
         color: vars.color.white,
 
         vars: {
-          [`${bgColorVar}`]: vars.color['amber-600'],
+          [bgColorVar]: vars.color['amber-600'],
         },
       },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['amber-700'],
+          [bgColorVar]: vars.color['amber-700'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['amber-800'],
+          [bgColorVar]: vars.color['amber-800'],
         },
       },
       [`${variants.solid}&:focus`]: {
@@ -142,19 +142,19 @@ export const intents = styleVariants({
       [`${variants.outlined}&`]: {
         color: vars.color['amber-600'],
         vars: {
-          [`${borderColorVar}`]: vars.color['amber-600'],
+          [borderColorVar]: vars.color['amber-600'],
         },
       },
       [`${variants.outlined}&:hover`]: {
         color: vars.color['amber-700'],
         vars: {
-          [`${bgColorVar}`]: vars.color['amber-100'],
+          [bgColorVar]: vars.color['amber-100'],
         },
       },
       [`${variants.outlined}&:active`]: {
         color: vars.color['amber-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['amber-200'],
+          [bgColorVar]: vars.color['amber-200'],
         },
       },
       [`${variants.outlined}&:focus`]: {
@@ -167,13 +167,13 @@ export const intents = styleVariants({
       [`${variants.subtle}&:hover`]: {
         color: vars.color['amber-700'],
         vars: {
-          [`${bgColorVar}`]: vars.color['amber-100'],
+          [bgColorVar]: vars.color['amber-100'],
         },
       },
       [`${variants.subtle}&:active`]: {
         color: vars.color['amber-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['amber-200'],
+          [bgColorVar]: vars.color['amber-200'],
         },
       },
       [`${variants.subtle}&:focus`]: {
@@ -188,17 +188,17 @@ export const intents = styleVariants({
         color: vars.color.white,
 
         vars: {
-          [`${bgColorVar}`]: vars.color['red-600'],
+          [bgColorVar]: vars.color['red-600'],
         },
       },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['red-700'],
+          [bgColorVar]: vars.color['red-700'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['red-800'],
+          [bgColorVar]: vars.color['red-800'],
         },
       },
       [`${variants.solid}&:focus`]: {
@@ -208,19 +208,19 @@ export const intents = styleVariants({
       [`${variants.outlined}&`]: {
         color: vars.color['red-600'],
         vars: {
-          [`${borderColorVar}`]: vars.color['red-600'],
+          [borderColorVar]: vars.color['red-600'],
         },
       },
       [`${variants.outlined}&:hover`]: {
         color: vars.color['red-700'],
         vars: {
-          [`${bgColorVar}`]: vars.color['red-100'],
+          [bgColorVar]: vars.color['red-100'],
         },
       },
       [`${variants.outlined}&:active`]: {
         color: vars.color['red-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['red-200'],
+          [bgColorVar]: vars.color['red-200'],
         },
       },
       [`${variants.outlined}&:focus`]: {
@@ -233,13 +233,13 @@ export const intents = styleVariants({
       [`${variants.subtle}&:hover`]: {
         color: vars.color['red-700'],
         vars: {
-          [`${bgColorVar}`]: vars.color['red-100'],
+          [bgColorVar]: vars.color['red-100'],
         },
       },
       [`${variants.subtle}&:active`]: {
         color: vars.color['red-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['red-200'],
+          [bgColorVar]: vars.color['red-200'],
         },
       },
       [`${variants.subtle}&:focus`]: {
@@ -254,17 +254,17 @@ export const intents = styleVariants({
         color: vars.color.white,
 
         vars: {
-          [`${bgColorVar}`]: vars.color['emerald-700'],
+          [bgColorVar]: vars.color['emerald-700'],
         },
       },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['emerald-800'],
+          [bgColorVar]: vars.color['emerald-800'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['emerald-900'],
+          [bgColorVar]: vars.color['emerald-900'],
         },
       },
       [`${variants.solid}&:focus`]: {
@@ -274,19 +274,19 @@ export const intents = styleVariants({
       [`${variants.outlined}&`]: {
         color: vars.color['emerald-700'],
         vars: {
-          [`${borderColorVar}`]: vars.color['emerald-700'],
+          [borderColorVar]: vars.color['emerald-700'],
         },
       },
       [`${variants.outlined}&:hover`]: {
         color: vars.color['emerald-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['emerald-100'],
+          [bgColorVar]: vars.color['emerald-100'],
         },
       },
       [`${variants.outlined}&:active`]: {
         color: vars.color['emerald-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['emerald-200'],
+          [bgColorVar]: vars.color['emerald-200'],
         },
       },
       [`${variants.outlined}&:focus`]: {
@@ -299,13 +299,13 @@ export const intents = styleVariants({
       [`${variants.subtle}&:hover`]: {
         color: vars.color['emerald-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['emerald-100'],
+          [bgColorVar]: vars.color['emerald-100'],
         },
       },
       [`${variants.subtle}&:active`]: {
         color: vars.color['emerald-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['emerald-200'],
+          [bgColorVar]: vars.color['emerald-200'],
         },
       },
       [`${variants.subtle}&:focus`]: {
@@ -319,17 +319,17 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: vars.color.white,
         vars: {
-          [`${bgColorVar}`]: vars.color['coolGray-500'],
+          [bgColorVar]: vars.color['coolGray-500'],
         },
       },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['coolGray-600'],
+          [bgColorVar]: vars.color['coolGray-600'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['coolGray-700'],
+          [bgColorVar]: vars.color['coolGray-700'],
         },
       },
       [`${variants.solid}&:focus`]: {
@@ -339,18 +339,18 @@ export const intents = styleVariants({
       [`${variants.outlined}&`]: {
         color: vars.color['coolGray-700'],
         vars: {
-          [`${borderColorVar}`]: vars.color['coolGray-500'],
+          [borderColorVar]: vars.color['coolGray-500'],
         },
       },
       [`${variants.outlined}&:hover`]: {
         color: vars.color['coolGray-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['coolGray-200'],
+          [bgColorVar]: vars.color['coolGray-200'],
         },
       },
       [`${variants.outlined}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['coolGray-300'],
+          [bgColorVar]: vars.color['coolGray-300'],
         },
       },
       [`${variants.outlined}&:focus`]: {
@@ -363,12 +363,12 @@ export const intents = styleVariants({
       [`${variants.subtle}&:hover`]: {
         color: vars.color['coolGray-800'],
         vars: {
-          [`${bgColorVar}`]: vars.color['coolGray-200'],
+          [bgColorVar]: vars.color['coolGray-200'],
         },
       },
       [`${variants.subtle}&:active`]: {
         vars: {
-          [`${bgColorVar}`]: vars.color['coolGray-300'],
+          [bgColorVar]: vars.color['coolGray-300'],
         },
       },
       [`${variants.subtle}&:focus`]: {
