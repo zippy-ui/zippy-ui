@@ -1,5 +1,5 @@
 import { createVar, style, styleVariants } from '@vanilla-extract/css';
-import { vars } from '../../styles/vars.css';
+import { rgbVar, vars } from '../../styles/vars.css';
 
 export const root = style({
   display: 'inline-block',
@@ -26,17 +26,17 @@ export const sizes = styleVariants({
 
 export type Sizes = keyof typeof sizes;
 
-const colorVar = createVar();
+const bgColorVar = createVar();
 
 export const variants = styleVariants({
   solid: {
-    backgroundColor: colorVar,
+    backgroundColor: bgColorVar,
   },
   outlined: {
-    boxShadow: `inset 0 0 0 1px ${colorVar}`,
+    boxShadow: `inset 0 0 0 1px ${bgColorVar}`,
   },
   subtle: {
-    backgroundColor: colorVar,
+    backgroundColor: bgColorVar,
   },
 });
 
@@ -48,19 +48,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [colorVar]: vars.color['emerald-700'],
+          [bgColorVar]: rgbVar(vars.color['emerald-700']),
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['emerald-700'],
+        color: rgbVar(vars.color['emerald-700']),
         vars: {
-          [colorVar]: vars.color['emerald-700'],
+          [bgColorVar]: rgbVar(vars.color['emerald-700']),
         },
       },
       [`${variants.subtle}&`]: {
-        color: vars.color['emerald-900'],
+        color: rgbVar(vars.color['emerald-900']),
         vars: {
-          [colorVar]: vars.color['emerald-200'],
+          [bgColorVar]: rgbVar(vars.color['emerald-700'], 0.2),
         },
       },
     },
@@ -71,19 +71,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [colorVar]: vars.color['red-600'],
+          [bgColorVar]: rgbVar(vars.color['red-600']),
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['red-600'],
+        color: rgbVar(vars.color['red-600']),
         vars: {
-          [colorVar]: vars.color['red-600'],
+          [bgColorVar]: rgbVar(vars.color['red-600']),
         },
       },
       [`${variants.subtle}&`]: {
-        color: vars.color['red-900'],
+        color: rgbVar(vars.color['red-900']),
         vars: {
-          [colorVar]: vars.color['red-200'],
+          [bgColorVar]: rgbVar(vars.color['red-600'], 0.2),
         },
       },
     },
@@ -94,19 +94,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [colorVar]: vars.color['amber-600'],
+          [bgColorVar]: rgbVar(vars.color['amber-600']),
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['amber-600'],
+        color: rgbVar(vars.color['amber-600']),
         vars: {
-          [colorVar]: vars.color['amber-600'],
+          [bgColorVar]: rgbVar(vars.color['amber-600']),
         },
       },
       [`${variants.subtle}&`]: {
-        color: vars.color['amber-900'],
+        color: rgbVar(vars.color['amber-900']),
         vars: {
-          [colorVar]: vars.color['amber-200'],
+          [bgColorVar]: rgbVar(vars.color['amber-600'], 0.2),
         },
       },
     },
@@ -117,19 +117,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [colorVar]: vars.color['blue-600'],
+          [bgColorVar]: rgbVar(vars.color['blue-600']),
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['blue-600'],
+        color: rgbVar(vars.color['blue-600']),
         vars: {
-          [colorVar]: vars.color['blue-600'],
+          [bgColorVar]: rgbVar(vars.color['blue-600']),
         },
       },
       [`${variants.subtle}&`]: {
-        color: vars.color['blue-900'],
+        color: rgbVar(vars.color['blue-900']),
         vars: {
-          [colorVar]: vars.color['blue-200'],
+          [bgColorVar]: rgbVar(vars.color['blue-600'], 0.2),
         },
       },
     },
@@ -140,19 +140,19 @@ export const intents = styleVariants({
       [`${variants.solid}&`]: {
         color: '#fff',
         vars: {
-          [colorVar]: vars.color['coolGray-500'],
+          [bgColorVar]: rgbVar(vars.color['coolGray-500']),
         },
       },
       [`${variants.outlined}&`]: {
-        color: vars.color['coolGray-500'],
+        color: rgbVar(vars.color['coolGray-500']),
         vars: {
-          [colorVar]: vars.color['coolGray-500'],
+          [bgColorVar]: rgbVar(vars.color['coolGray-500']),
         },
       },
       [`${variants.subtle}&`]: {
-        color: vars.color['coolGray-900'],
+        color: rgbVar(vars.color['coolGray-900']),
         vars: {
-          [colorVar]: vars.color['coolGray-200'],
+          [bgColorVar]: rgbVar(vars.color['coolGray-500'], 0.2),
         },
       },
     },
