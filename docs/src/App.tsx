@@ -39,8 +39,12 @@ function App() {
         <p className="mt-4 text-xl text-gray-500 dark:text-gray-300">
           Lightning fast components for Solid
         </p>
-        <button type="button" onClick={() => toggleColorMode()}>
-          {colorMode() === 'light' ? 'Light mode' : 'Dark mode'}
+        <button
+          type="button"
+          onClick={() => toggleColorMode()}
+          className="text-xl mt-4"
+        >
+          {colorMode() === 'light' ? '☀️' : '🌙'}
         </button>
       </div>
       <div className="container mx-auto mt-10 flex">
