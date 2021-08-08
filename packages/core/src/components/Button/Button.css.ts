@@ -53,7 +53,7 @@ export const intents = styleVariants({
   info: {
     selectors: {
       [`${variants.solid}&`]: {
-        color: rgbVar(vars.color.white),
+        color: '#fff',
         vars: {
           [bgColorVar]: rgbVar(vars.color['blue-600']),
         },
@@ -120,7 +120,7 @@ export const intents = styleVariants({
   warning: {
     selectors: {
       [`${variants.solid}&`]: {
-        color: rgbVar(vars.color.white),
+        color: '#fff',
 
         vars: {
           [bgColorVar]: rgbVar(vars.color['amber-600']),
@@ -188,7 +188,7 @@ export const intents = styleVariants({
   danger: {
     selectors: {
       [`${variants.solid}&`]: {
-        color: rgbVar(vars.color.white),
+        color: '#fff',
 
         vars: {
           [bgColorVar]: rgbVar(vars.color['red-600']),
@@ -256,7 +256,7 @@ export const intents = styleVariants({
   success: {
     selectors: {
       [`${variants.solid}&`]: {
-        color: rgbVar(vars.color.white),
+        color: '#fff',
 
         vars: {
           [bgColorVar]: rgbVar(vars.color['emerald-700']),
@@ -324,7 +324,7 @@ export const intents = styleVariants({
   none: {
     selectors: {
       [`${variants.solid}&`]: {
-        color: rgbVar(vars.color.white),
+        color: '#fff',
         vars: {
           [bgColorVar]: rgbVar(vars.color['coolGray-500']),
         },

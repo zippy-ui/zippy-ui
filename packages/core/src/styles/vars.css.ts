@@ -16,8 +16,6 @@ function hexToRgb(hex) {
 }
 
 const colors = {
-  black: '#000000',
-  white: '#ffffff',
   'rose-50': '#fff1f2',
   'rose-100': '#ffe4e6',
   'rose-200': '#fecdd3',

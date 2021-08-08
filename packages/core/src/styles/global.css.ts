@@ -4,5 +4,5 @@ import { vars } from './vars.css';
 
 globalStyle(`.${darkMode}`, {
   backgroundColor: vars.color['gray-900'],
-  color: vars.color.white,
+  color: '#fff',
 });
