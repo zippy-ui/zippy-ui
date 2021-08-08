@@ -4,7 +4,7 @@ import {
   style,
   styleVariants,
 } from '@vanilla-extract/css';
-import { vars } from '../../vars.css';
+import { vars } from '../../styles/vars.css';
 
 const bgColorVar = createVar();
 

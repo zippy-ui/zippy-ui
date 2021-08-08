@@ -1,6 +1,6 @@
 import * as styles from './Badge.css';
 import type { Sizes, Variants , Intents} from './Badge.css';
-import { atoms, Atoms } from '../../sprinkles.css';
+import { atoms, Atoms } from '../../styles/sprinkles.css';
 
 export interface BadgeProps {
   size?: Sizes;

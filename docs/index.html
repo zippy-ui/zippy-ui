@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" class="text-gray-500 antialiased bg-white">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      try {
+        const currentMode = localStorage.getItem('mode');
+        if (currentMode === 'dark' || (currentMode !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <title>Zippy UI</title>
   </head>
-  <body>
+  <body class="text-gray-800 antialiased bg-white dark:bg-gray-900 dark:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

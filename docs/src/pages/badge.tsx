@@ -7,7 +7,7 @@ export default function Page() {
 
       <h4>Danger</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Badge
           variant="outlined"
           intent="danger"
@@ -34,7 +34,7 @@ export default function Page() {
 
       <h4>Success</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Badge
           variant="outlined"
           intent="success"
@@ -60,7 +60,7 @@ export default function Page() {
 
       <h4>Warning</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Badge
           variant="outlined"
           intent="warning"
@@ -86,7 +86,7 @@ export default function Page() {
 
       <h4>Info</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Badge
           variant="outlined"
           intent="info"
@@ -112,7 +112,7 @@ export default function Page() {
 
       <h4>None</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Badge
           variant="outlined"
           intent="none"

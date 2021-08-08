@@ -7,7 +7,7 @@ export default function Page() {
 
       <h4>Danger</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Button sx={{ mr: 2 }} intent="danger">
           solid danger
         </Button>
@@ -23,7 +23,7 @@ export default function Page() {
 
       <h4>Success</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Button sx={{ mr: 2 }} intent="success">
           solid success
         </Button>
@@ -39,7 +39,7 @@ export default function Page() {
 
       <h4>Warning</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Button sx={{ mr: 2 }} intent="warning">
           solid warning
         </Button>
@@ -55,7 +55,7 @@ export default function Page() {
 
       <h4>Info</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Button sx={{ mr: 2 }} intent="info">
           solid info
         </Button>
@@ -71,7 +71,7 @@ export default function Page() {
 
       <h4>None</h4>
 
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex">
+      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
         <Button sx={{ mr: 2 }}>solid none</Button>
 
         <Button variant="outlined" sx={{ mr: 2 }}>

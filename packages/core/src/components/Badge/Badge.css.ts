@@ -1,5 +1,5 @@
 import { createVar, style, styleVariants } from '@vanilla-extract/css';
-import { vars } from '../../vars.css';
+import { vars } from '../../styles/vars.css';
 
 export const root = style({
   display: 'inline-block',

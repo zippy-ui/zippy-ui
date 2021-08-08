@@ -1,6 +1,6 @@
 import * as styles from './Button.css';
 import type { Sizes, Variants , Intents} from './Button.css';
-import { atoms, Atoms } from '../../sprinkles.css';
+import { atoms, Atoms } from '../../styles/sprinkles.css';
 
 export interface ButtonProps {
   size?: Sizes;
