@@ -15,14 +15,6 @@ export const root = style({
   border: 0,
   color: rgbVar(textColorVar),
   backgroundColor: rgbVar(bgColorVar, bgOpacityVar),
-
-  selectors: {
-    [`.dark &&`]: {
-      vars: {
-        [textColorVar]: vars.color.white,
-      },
-    },
-  },
 });
 
 export const sizes = styleVariants({
@@ -80,9 +72,21 @@ export const intents = styleVariants({
         },
       },
 
+      [`.dark ${variants.outlined}&`]: {
+        vars: {
+          [textColorVar]: vars.color['emerald-100'],
+        },
+      },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['emerald-900'],
+        },
+      },
+
+      [`.dark ${variants.subtle}&`]: {
+        vars: {
+          [textColorVar]: vars.color['emerald-100'],
         },
       },
     },
@@ -99,9 +103,21 @@ export const intents = styleVariants({
         },
       },
 
+      [`.dark ${variants.outlined}&`]: {
+        vars: {
+          [textColorVar]: vars.color['red-100'],
+        },
+      },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['red-900'],
+        },
+      },
+
+      [`.dark ${variants.subtle}&`]: {
+        vars: {
+          [textColorVar]: vars.color['red-100'],
         },
       },
     },
@@ -118,9 +134,21 @@ export const intents = styleVariants({
         },
       },
 
+      [`.dark ${variants.outlined}&`]: {
+        vars: {
+          [textColorVar]: vars.color['amber-100'],
+        },
+      },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['amber-900'],
+        },
+      },
+
+      [`.dark ${variants.subtle}&`]: {
+        vars: {
+          [textColorVar]: vars.color['amber-100'],
         },
       },
     },
@@ -137,9 +165,21 @@ export const intents = styleVariants({
         },
       },
 
+      [`.dark ${variants.outlined}&`]: {
+        vars: {
+          [textColorVar]: vars.color['blue-100'],
+        },
+      },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['blue-900'],
+        },
+      },
+
+      [`.dark ${variants.subtle}&`]: {
+        vars: {
+          [textColorVar]: vars.color['blue-100'],
         },
       },
     },
@@ -156,9 +196,21 @@ export const intents = styleVariants({
         },
       },
 
+      [`.dark ${variants.outlined}&`]: {
+        vars: {
+          [textColorVar]: vars.color['coolGray-100'],
+        },
+      },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['coolGray-900'],
+        },
+      },
+
+      [`.dark ${variants.subtle}&`]: {
+        vars: {
+          [textColorVar]: vars.color['coolGray-100'],
         },
       },
     },
