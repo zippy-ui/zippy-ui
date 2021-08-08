@@ -15,10 +15,6 @@ export default function Page() {
         <Button variant="outlined" intent="danger" sx={{ mr: 2 }}>
           outlined danger
         </Button>
-
-        <Button variant="subtle" intent="danger">
-          subtle danger
-        </Button>
       </div>
 
       <h4>Success</h4>
@@ -30,10 +26,6 @@ export default function Page() {
 
         <Button variant="outlined" intent="success" sx={{ mr: 2 }}>
           outlined success
-        </Button>
-
-        <Button variant="subtle" intent="success">
-          subtle success
         </Button>
       </div>
 
@@ -47,10 +39,6 @@ export default function Page() {
         <Button variant="outlined" intent="warning" sx={{ mr: 2 }}>
           outlined warning
         </Button>
-
-        <Button variant="subtle" intent="warning">
-          subtle warning
-        </Button>
       </div>
 
       <h4>Info</h4>
@@ -63,10 +51,6 @@ export default function Page() {
         <Button variant="outlined" intent="info" sx={{ mr: 2 }}>
           outlined info
         </Button>
-
-        <Button variant="subtle" intent="info">
-          subtle info
-        </Button>
       </div>
 
       <h4>None</h4>
@@ -77,8 +61,6 @@ export default function Page() {
         <Button variant="outlined" sx={{ mr: 2 }}>
           outlined none
         </Button>
-
-        <Button variant="subtle">subtle none</Button>
       </div>
     </>
   );

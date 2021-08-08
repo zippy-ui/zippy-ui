@@ -1,23 +1,25 @@
-import {
-  createVar,
-  fallbackVar,
-  style,
-  styleVariants,
-} from '@vanilla-extract/css';
+import { createVar, style, styleVariants } from '@vanilla-extract/css';
 import { rgbVar, vars } from '../../styles/vars.css';
 
 const bgColorVar = createVar();
+const textColorVar = createVar();
+const borderColorVar = createVar();
+const focusBorderColorVar = createVar();
+const bgOpacityVar = createVar();
 
 export const root = style({
   padding: '.375rem .75rem',
   display: 'inline-flex',
   lineHeight: 1.5,
   fontSize: '16px',
-  backgroundColor: fallbackVar(bgColorVar, 'none'),
+  backgroundColor: rgbVar(bgColorVar, bgOpacityVar),
   borderRadius: '0.2em',
+  color: rgbVar(textColorVar),
+  border: `1px solid ${rgbVar(borderColorVar)}`,
 
   ':focus': {
     outline: 0,
+    boxShadow: `0 0 0 .2rem ${rgbVar(focusBorderColorVar)}`,
   },
 });
 
@@ -35,14 +37,44 @@ export const sizes = styleVariants({
 
 export type Sizes = keyof typeof sizes;
 
-const borderColorVar = createVar();
-
 export const variants = styleVariants({
-  solid: {},
-  outlined: {
-    boxShadow: `inset 0 0 0 1px ${borderColorVar}`,
+  solid: {
+    vars: {
+      [textColorVar]: vars.color.white,
+      [bgOpacityVar]: '1',
+      [borderColorVar]: bgColorVar,
+    },
   },
-  subtle: {},
+  outlined: {
+    vars: {
+      [bgOpacityVar]: '0',
+      [borderColorVar]: bgColorVar,
+    },
+
+    ':hover': {
+      vars: {
+        [bgOpacityVar]: '0.1',
+      },
+    },
+    ':active': {
+      vars: {
+        [bgOpacityVar]: '0.2',
+      },
+    },
+
+    selectors: {
+      [`.dark &:hover`]: {
+        vars: {
+          [bgOpacityVar]: '0.4',
+        },
+      },
+      [`.dark &:active`]: {
+        vars: {
+          [bgOpacityVar]: '0.5',
+        },
+      },
+    },
+  },
 });
 
 export type Variants = keyof typeof variants;
@@ -51,339 +83,146 @@ export const text = style({});
 
 export const intents = styleVariants({
   info: {
+    vars: {
+      [bgColorVar]: vars.color['blue-600'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        color: '#fff',
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['blue-600']),
-        },
-      },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['blue-700']),
+          [bgColorVar]: vars.color['blue-700'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['blue-800']),
+          [bgColorVar]: vars.color['blue-800'],
         },
-      },
-      [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['blue-600'],
-        )}`,
       },
 
       [`${variants.outlined}&`]: {
-        color: rgbVar(vars.color['blue-600']),
         vars: {
-          [borderColorVar]: rgbVar(vars.color['blue-600']),
+          [textColorVar]: vars.color['blue-700'],
         },
       },
-      [`${variants.outlined}&:hover`]: {
+      [`.dark ${variants.outlined}&`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['blue-600'], 0.1),
+          [textColorVar]: vars.color['blue-100'],
         },
-      },
-      [`${variants.outlined}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['blue-600'], 0.2),
-        },
-      },
-      [`${variants.outlined}&:focus`]: {
-        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['blue-600'],
-        )}`,
-      },
-
-      [`${variants.subtle}&`]: {
-        color: rgbVar(vars.color['blue-600']),
-      },
-      [`${variants.subtle}&:hover`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['blue-600'], 0.1),
-        },
-      },
-      [`${variants.subtle}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['blue-600'], 0.2),
-        },
-      },
-      [`${variants.subtle}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['blue-600'],
-        )}`,
       },
     },
   },
 
   warning: {
+    vars: {
+      [bgColorVar]: vars.color['amber-600'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        color: '#fff',
-
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['amber-600']),
-        },
-      },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['amber-700']),
+          [bgColorVar]: vars.color['amber-700'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['amber-800']),
+          [bgColorVar]: vars.color['amber-800'],
         },
-      },
-      [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['amber-600'],
-        )}`,
       },
 
       [`${variants.outlined}&`]: {
-        color: rgbVar(vars.color['amber-600']),
         vars: {
-          [borderColorVar]: rgbVar(vars.color['amber-600']),
+          [textColorVar]: vars.color['amber-600'],
         },
       },
-      [`${variants.outlined}&:hover`]: {
+      [`.dark ${variants.outlined}&`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['amber-600'], 0.1),
+          [textColorVar]: vars.color['amber-100'],
         },
-      },
-      [`${variants.outlined}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['amber-600'], 0.2),
-        },
-      },
-      [`${variants.outlined}&:focus`]: {
-        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['amber-600'],
-        )}`,
-      },
-
-      [`${variants.subtle}&`]: {
-        color: rgbVar(vars.color['amber-600']),
-      },
-      [`${variants.subtle}&:hover`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['amber-600'], 0.1),
-        },
-      },
-      [`${variants.subtle}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['amber-600'], 0.2),
-        },
-      },
-      [`${variants.subtle}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['amber-600'],
-        )}`,
       },
     },
   },
 
   danger: {
+    vars: {
+      [bgColorVar]: vars.color['red-600'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        color: '#fff',
-
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['red-600']),
-        },
-      },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['red-700']),
+          [bgColorVar]: vars.color['red-700'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['red-800']),
+          [bgColorVar]: vars.color['red-800'],
         },
-      },
-      [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['red-600'],
-        )}`,
       },
 
       [`${variants.outlined}&`]: {
-        color: rgbVar(vars.color['red-600']),
         vars: {
-          [borderColorVar]: rgbVar(vars.color['red-600']),
+          [textColorVar]: vars.color['red-600'],
         },
       },
-      [`${variants.outlined}&:hover`]: {
+      [`.dark ${variants.outlined}&`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['red-600'], 0.1),
+          [textColorVar]: vars.color['red-100'],
         },
-      },
-      [`${variants.outlined}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['red-600'], 0.2),
-        },
-      },
-      [`${variants.outlined}&:focus`]: {
-        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['red-600'],
-        )}`,
-      },
-
-      [`${variants.subtle}&`]: {
-        color: rgbVar(vars.color['red-600']),
-      },
-      [`${variants.subtle}&:hover`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['red-600'], 0.1),
-        },
-      },
-      [`${variants.subtle}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['red-600'], 0.2),
-        },
-      },
-      [`${variants.subtle}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['red-600'],
-        )}`,
       },
     },
   },
 
   success: {
+    vars: {
+      [bgColorVar]: vars.color['emerald-700'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        color: '#fff',
-
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['emerald-700']),
-        },
-      },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['emerald-800']),
+          [bgColorVar]: vars.color['emerald-800'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['emerald-900']),
+          [bgColorVar]: vars.color['emerald-900'],
         },
-      },
-      [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['emerald-700'],
-        )}`,
       },
 
       [`${variants.outlined}&`]: {
-        color: rgbVar(vars.color['emerald-700']),
         vars: {
-          [borderColorVar]: rgbVar(vars.color['emerald-700']),
+          [textColorVar]: vars.color['emerald-700'],
         },
       },
-      [`${variants.outlined}&:hover`]: {
+      [`.dark ${variants.outlined}&`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['emerald-700'], 0.1),
+          [textColorVar]: vars.color['emerald-100'],
         },
-      },
-      [`${variants.outlined}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['emerald-700'], 0.2),
-        },
-      },
-      [`${variants.outlined}&:focus`]: {
-        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['emerald-700'],
-        )}`,
-      },
-
-      [`${variants.subtle}&`]: {
-        color: rgbVar(vars.color['emerald-700']),
-      },
-      [`${variants.subtle}&:hover`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['emerald-700'], 0.1),
-        },
-      },
-      [`${variants.subtle}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['emerald-700'], 0.2),
-        },
-      },
-      [`${variants.subtle}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['emerald-700'],
-        )}`,
       },
     },
   },
 
   none: {
+    vars: {
+      [bgColorVar]: vars.color['coolGray-500'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        color: '#fff',
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['coolGray-500']),
-        },
-      },
       [`${variants.solid}&:hover`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['coolGray-600']),
+          [bgColorVar]: vars.color['coolGray-600'],
         },
       },
       [`${variants.solid}&:active`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['coolGray-700']),
+          [bgColorVar]: vars.color['coolGray-700'],
         },
-      },
-      [`${variants.solid}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['coolGray-500'],
-        )}`,
       },
 
       [`${variants.outlined}&`]: {
-        color: rgbVar(vars.color['coolGray-700']),
         vars: {
-          [borderColorVar]: rgbVar(vars.color['coolGray-500']),
+          [textColorVar]: vars.color['coolGray-700'],
         },
       },
-      [`${variants.outlined}&:hover`]: {
+      [`.dark ${variants.outlined}&`]: {
         vars: {
-          [bgColorVar]: rgbVar(vars.color['coolGray-500'], 0.1),
+          [textColorVar]: vars.color['coolGray-100'],
         },
-      },
-      [`${variants.outlined}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['coolGray-500'], 0.2),
-        },
-      },
-      [`${variants.outlined}&:focus`]: {
-        boxShadow: `inset 0 0 0 1px ${borderColorVar}, 0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['coolGray-500'],
-        )}`,
-      },
-
-      [`${variants.subtle}&`]: {
-        color: rgbVar(vars.color['coolGray-700']),
-      },
-      [`${variants.subtle}&:hover`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['coolGray-500'], 0.1),
-        },
-      },
-      [`${variants.subtle}&:active`]: {
-        vars: {
-          [bgColorVar]: rgbVar(vars.color['coolGray-500'], 0.2),
-        },
-      },
-      [`${variants.subtle}&:focus`]: {
-        boxShadow: `0 0 0 .1rem #fff, 0 0 0 .25rem ${rgbVar(
-          vars.color['coolGray-500'],
-        )}`,
       },
     },
   },
