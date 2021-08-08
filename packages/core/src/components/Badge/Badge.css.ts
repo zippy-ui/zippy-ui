@@ -6,13 +6,20 @@ const textColorVar = createVar();
 export const root = style({
   display: 'inline-block',
   whiteSpace: 'nowrap',
-  verticalAlign: 'middle',
   borderRadius: '.25rem',
   lineHeight: 1,
   padding: '.45em .65em',
   fontWeight: 700,
   border: 0,
   color: rgbVar(textColorVar),
+
+  selectors: {
+    [`.dark &&`]: {
+      vars: {
+        [textColorVar]: vars.color.white,
+      },
+    },
+  },
 });
 
 export const sizes = styleVariants({
@@ -41,6 +48,16 @@ export const variants = styleVariants({
   },
   subtle: {
     backgroundColor: rgbVar(bgColorVar, bgOpacityVar),
+    vars: {
+      [bgOpacityVar]: '0.2',
+    },
+    selectors: {
+      [`.dark &`]: {
+        vars: {
+          [bgOpacityVar]: '0.4',
+        },
+      },
+    },
   },
 });
 
@@ -55,28 +72,18 @@ export const intents = styleVariants({
           [bgColorVar]: vars.color['emerald-700'],
         },
       },
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-        },
-      },
+
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['emerald-800'],
           [bgColorVar]: vars.color['emerald-700'],
         },
       },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['emerald-900'],
           [bgColorVar]: vars.color['emerald-700'],
-          [bgOpacityVar]: '0.2',
-        },
-      },
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgOpacityVar]: '0.4',
         },
       },
     },
@@ -90,28 +97,18 @@ export const intents = styleVariants({
           [bgColorVar]: vars.color['red-600'],
         },
       },
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-        },
-      },
+
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['red-700'],
           [bgColorVar]: vars.color['red-600'],
         },
       },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['red-900'],
           [bgColorVar]: vars.color['red-600'],
-          [bgOpacityVar]: '0.2',
-        },
-      },
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgOpacityVar]: '0.4',
         },
       },
     },
@@ -125,28 +122,18 @@ export const intents = styleVariants({
           [bgColorVar]: vars.color['amber-600'],
         },
       },
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-        },
-      },
+
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['amber-700'],
           [bgColorVar]: vars.color['amber-600'],
         },
       },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['amber-900'],
           [bgColorVar]: vars.color['amber-600'],
-          [bgOpacityVar]: '0.2',
-        },
-      },
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgOpacityVar]: '0.4',
         },
       },
     },
@@ -160,28 +147,18 @@ export const intents = styleVariants({
           [bgColorVar]: vars.color['blue-600'],
         },
       },
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-        },
-      },
+
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['blue-700'],
           [bgColorVar]: vars.color['blue-600'],
         },
       },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['blue-900'],
           [bgColorVar]: vars.color['blue-600'],
-          [bgOpacityVar]: '0.2',
-        },
-      },
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgOpacityVar]: '0.4',
         },
       },
     },
@@ -195,28 +172,18 @@ export const intents = styleVariants({
           [bgColorVar]: vars.color['coolGray-500'],
         },
       },
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-        },
-      },
+
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['coolGray-600'],
           [bgColorVar]: vars.color['coolGray-500'],
         },
       },
+
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['coolGray-900'],
           [bgColorVar]: vars.color['coolGray-500'],
-          [bgOpacityVar]: '0.2',
-        },
-      },
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgOpacityVar]: '0.4',
         },
       },
     },
