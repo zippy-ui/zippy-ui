@@ -1,8 +1,23 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
 
+/**
+ * Copied from
+ * https://github.com/sindresorhus/hex-rgb/blob/26dbac3f0d7aca87e0a2fb10809b4e16e40b39ff/index.js
+ */
+function hexToRgb(hex) {
+  hex = hex.replace(/^#/, '');
+
+  const number = Number.parseInt(hex, 16);
+  const red = number >> 16;
+  const green = (number >> 8) & 255;
+  const blue = number & 255;
+
+  return [red, green, blue].join(' ');
+}
+
 const colors = {
-  black: '#000',
-  white: '#fff',
+  black: '#000000',
+  white: '#ffffff',
   'rose-50': '#fff1f2',
   'rose-100': '#ffe4e6',
   'rose-200': '#fecdd3',
@@ -225,6 +240,14 @@ const colors = {
   'blueGray-900': '#0f172a',
 };
 
+for (const key in colors) {
+  colors[key] = hexToRgb(colors[key]);
+}
+
 export const vars = createGlobalTheme(':root', {
   color: colors,
 });
+
+export function rgbVar(colorVar, alpha = 1) {
+  return `rgb(${colorVar}/${alpha})`;
+}
