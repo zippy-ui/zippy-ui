@@ -2,6 +2,8 @@ import { createVar, style, styleVariants } from '@vanilla-extract/css';
 import { rgbVar, vars } from '../../styles/vars.css';
 
 const textColorVar = createVar();
+const bgColorVar = createVar();
+const bgOpacityVar = createVar();
 
 export const root = style({
   display: 'inline-block',
@@ -12,6 +14,7 @@ export const root = style({
   fontWeight: 700,
   border: 0,
   color: rgbVar(textColorVar),
+  backgroundColor: rgbVar(bgColorVar, bgOpacityVar),
 
   selectors: {
     [`.dark &&`]: {
@@ -36,18 +39,20 @@ export const sizes = styleVariants({
 
 export type Sizes = keyof typeof sizes;
 
-const bgColorVar = createVar();
-const bgOpacityVar = createVar();
-
 export const variants = styleVariants({
   solid: {
-    backgroundColor: rgbVar(bgColorVar),
+    vars: {
+      [textColorVar]: vars.color.white,
+      [bgOpacityVar]: '1',
+    },
   },
   outlined: {
     boxShadow: `inset 0 0 0 1px ${rgbVar(bgColorVar)}`,
+    vars: {
+      [bgOpacityVar]: '0',
+    },
   },
   subtle: {
-    backgroundColor: rgbVar(bgColorVar, bgOpacityVar),
     vars: {
       [bgOpacityVar]: '0.2',
     },
@@ -65,125 +70,95 @@ export type Variants = keyof typeof variants;
 
 export const intents = styleVariants({
   success: {
+    vars: {
+      [bgColorVar]: vars.color['emerald-700'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgColorVar]: vars.color['emerald-700'],
-        },
-      },
-
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['emerald-800'],
-          [bgColorVar]: vars.color['emerald-700'],
         },
       },
 
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['emerald-900'],
-          [bgColorVar]: vars.color['emerald-700'],
         },
       },
     },
   },
 
   danger: {
+    vars: {
+      [bgColorVar]: vars.color['red-600'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgColorVar]: vars.color['red-600'],
-        },
-      },
-
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['red-700'],
-          [bgColorVar]: vars.color['red-600'],
         },
       },
 
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['red-900'],
-          [bgColorVar]: vars.color['red-600'],
         },
       },
     },
   },
 
   warning: {
+    vars: {
+      [bgColorVar]: vars.color['amber-600'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgColorVar]: vars.color['amber-600'],
-        },
-      },
-
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['amber-700'],
-          [bgColorVar]: vars.color['amber-600'],
         },
       },
 
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['amber-900'],
-          [bgColorVar]: vars.color['amber-600'],
         },
       },
     },
   },
 
   info: {
+    vars: {
+      [bgColorVar]: vars.color['blue-600'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgColorVar]: vars.color['blue-600'],
-        },
-      },
-
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['blue-700'],
-          [bgColorVar]: vars.color['blue-600'],
         },
       },
 
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['blue-900'],
-          [bgColorVar]: vars.color['blue-600'],
         },
       },
     },
   },
 
   none: {
+    vars: {
+      [bgColorVar]: vars.color['coolGray-500'],
+    },
     selectors: {
-      [`${variants.solid}&`]: {
-        vars: {
-          [textColorVar]: vars.color.white,
-          [bgColorVar]: vars.color['coolGray-500'],
-        },
-      },
-
       [`${variants.outlined}&`]: {
         vars: {
           [textColorVar]: vars.color['coolGray-600'],
-          [bgColorVar]: vars.color['coolGray-500'],
         },
       },
 
       [`${variants.subtle}&`]: {
         vars: {
           [textColorVar]: vars.color['coolGray-900'],
-          [bgColorVar]: vars.color['coolGray-500'],
         },
       },
     },
