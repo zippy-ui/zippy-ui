@@ -8,11 +8,11 @@
     "@vanilla-extract/css": "^1.2.2",
     "@vanilla-extract/sprinkles": "^1.0.0",
     "babel-loader": "^8.2.2",
-    "babel-preset-solid": "^1.0.6",
+    "babel-preset-solid": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
-    "solid-js": "^1.0.7"
+    "solid-js": "^1.1.0"
   },
   "scripts": {
     "build": "gulp compileCode && gulp generateDeclarations",
