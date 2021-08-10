@@ -1,5 +1,5 @@
 import * as styles from './Badge.css';
-import type { Sizes, Variants , Intents} from './Badge.css';
+import type { Sizes, Variants, Intents } from './Badge.css';
 import { atoms, Atoms } from '../../styles/sprinkles.css';
 
 export interface BadgeProps {
@@ -11,7 +11,13 @@ export interface BadgeProps {
 }
 
 export function Badge(props: BadgeProps) {
-  const { children, variant = 'solid', size = 'default', intent = 'none', sx = {} } = props;
+  const {
+    children,
+    variant = 'solid',
+    size = 'default',
+    intent = 'none',
+    sx = {},
+  } = props;
   const className = atoms(sx);
 
   return (

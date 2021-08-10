@@ -1,5 +1,5 @@
 import * as styles from './Button.css';
-import type { Sizes, Variants , Intents} from './Button.css';
+import type { Sizes, Variants, Intents } from './Button.css';
 import { atoms, Atoms } from '../../styles/sprinkles.css';
 
 export interface ButtonProps {
@@ -16,7 +16,15 @@ export interface ButtonProps {
 }
 
 export function Button(props: ButtonProps) {
-  const { children, variant = 'solid', size = 'default', intent = 'none', startIcon, endIcon, sx = {} } = props;
+  const {
+    children,
+    variant = 'solid',
+    size = 'default',
+    intent = 'none',
+    startIcon,
+    endIcon,
+    sx = {},
+  } = props;
   const className = atoms(sx);
 
   return (
