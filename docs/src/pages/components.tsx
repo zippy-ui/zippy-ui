@@ -10,16 +10,23 @@ export default function Components() {
         <NavLink
           href="/components/badge"
           class="hover:bg-gray-300 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium dark:hover:bg-gray-800 dark:hover:text-white"
-          activeClass="bg-blue-500 text-white hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600"
+          activeClass="bg-blue-600 text-white hover:bg-blue-700 hover:text-white dark:hover:bg-blue-700"
         >
           Badge
         </NavLink>
         <NavLink
           href="/components/button"
           class="hover:bg-gray-300 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium dark:hover:bg-gray-800 dark:hover:text-white"
-          activeClass="bg-blue-500 text-white hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600"
+          activeClass="bg-blue-600 text-white hover:bg-blue-700 hover:text-white dark:hover:bg-blue-700"
         >
           Button
+        </NavLink>
+        <NavLink
+          href="/components/button-group"
+          class="hover:bg-gray-300 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium dark:hover:bg-gray-800 dark:hover:text-white"
+          activeClass="bg-blue-600 text-white hover:bg-blue-700 hover:text-white dark:hover:bg-blue-700"
+        >
+          Button group
         </NavLink>
       </div>
       <article className="prose prose-xl flex-1">

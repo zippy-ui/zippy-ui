@@ -1,5 +1,6 @@
 import { createVar, style, styleVariants } from '@vanilla-extract/css';
 import { rgbVar, vars } from '../../styles/vars.css';
+import { root as buttonGroupRoot } from '../ButtonGroup/ButtonGroup.css';
 
 const bgColorVar = createVar();
 const textColorVar = createVar();
@@ -20,6 +21,33 @@ export const root = style({
   ':focus': {
     outline: 0,
     boxShadow: `0 0 0 .2rem ${rgbVar(focusBorderColorVar)}`,
+  },
+
+  // TODO: figure out if this is the best way to style buttons in a group
+  selectors: {
+    [`${buttonGroupRoot} > &`]: {
+      position: 'relative',
+      flex: '1 1 auto',
+    },
+
+    [`${buttonGroupRoot} > &:hover, ${buttonGroupRoot} > &:focus, ${buttonGroupRoot} > &:active`]:
+      {
+        zIndex: 1,
+      },
+
+    [`${buttonGroupRoot}> &:not(:first-child)`]: {
+      marginLeft: '-1px',
+    },
+
+    [`${buttonGroupRoot} > &:not(:last-child)`]: {
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
+    },
+
+    [`${buttonGroupRoot} > &:nth-child(n+3), ${buttonGroupRoot} > & + &`]: {
+      borderTopLeftRadius: 0,
+      borderBottomLeftRadius: 0,
+    },
   },
 });
 

@@ -3,6 +3,7 @@ import { useColorMode } from '@zippy-ui/core/dist/hooks/useColorMode';
 import Index from './pages/index';
 import Badge from './pages/badge';
 import Button from './pages/button';
+import ButtonGroup from './pages/button-group';
 import Components from './pages/components';
 
 const routes = [
@@ -21,6 +22,10 @@ const routes = [
       {
         path: 'button',
         component: Button,
+      },
+      {
+        path: 'button-group',
+        component: ButtonGroup,
       },
     ],
   },
