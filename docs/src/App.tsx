@@ -52,7 +52,7 @@ function App() {
           {colorMode() === 'light' ? '☀️' : '🌙'}
         </button>
       </div>
-      <div className="container mx-auto mt-10 flex">
+      <div className="container mx-auto my-10 flex">
         <Routes />
       </div>
     </>

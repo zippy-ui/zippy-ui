@@ -38,9 +38,17 @@ export function Button(props: ButtonProps) {
         [className]: typeof sx !== 'undefined',
       }}
     >
-      {startIcon && <span className="icon start">{startIcon}</span>}
-      <span className="text">{children}</span>
-      {endIcon && <span className="icon end">{endIcon}</span>}
+      {startIcon && (
+        <span classList={{ [styles.icon]: true, [styles.iconStart]: true }}>
+          {startIcon}
+        </span>
+      )}
+      <span className={styles.text}>{children}</span>
+      {endIcon && (
+        <span classList={{ [styles.icon]: true, [styles.iconEnd]: true }}>
+          {endIcon}
+        </span>
+      )}
     </button>
   );
 }

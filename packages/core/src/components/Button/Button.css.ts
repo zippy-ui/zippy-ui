@@ -9,7 +9,7 @@ const focusBorderColorVar = createVar();
 const bgOpacityVar = createVar();
 
 export const root = style({
-  padding: '.375rem .75rem',
+  padding: '.4rem .8rem',
   display: 'inline-flex',
   lineHeight: 1.5,
   fontSize: '16px',
@@ -17,6 +17,7 @@ export const root = style({
   borderRadius: '0.2em',
   color: rgbVar(textColorVar),
   border: `1px solid ${rgbVar(borderColorVar)}`,
+  alignItems: 'center',
 
   ':focus': {
     outline: 0,
@@ -257,3 +258,13 @@ export const intents = styleVariants({
 });
 
 export type Intents = keyof typeof intents;
+
+export const icon = style({});
+
+export const iconStart = style({
+  margin: '0 .4rem 0 -.2rem',
+});
+
+export const iconEnd = style({
+  margin: '0 -.2rem 0 .4rem',
+});

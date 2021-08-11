@@ -15,6 +15,10 @@ const sharedReactRules = {
   'react/prop-types': 'off',
   'react/jsx-props-no-spreading': 'off',
   'react/require-default-props': 'off',
+  'react/no-unknown-property': [
+    'error',
+    { ignore: ['stroke-width', 'stroke-linecap', 'stroke-linejoin'] },
+  ],
 };
 
 module.exports = {
