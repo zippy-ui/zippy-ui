@@ -2,7 +2,7 @@
   "name": "@zippy-ui/core",
   "version": "0.0.1",
   "dependencies": {
-    "@vanilla-extract/css": "^1.2.2",
+    "@vanilla-extract/css": "^1.2.3",
     "@vanilla-extract/sprinkles": "^1.0.0",
     "solid-js": "^1.1.0"
   },

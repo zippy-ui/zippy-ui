@@ -1,20 +1,15 @@
 const path = require('path');
 
 const sharedRules = {
-  'default-case': 'off',
   'no-console': 'off',
   'import/prefer-default-export': 'off',
-  'import/no-extraneous-dependencies': 'off',
+  'no-bitwise': 'off',
   'no-param-reassign': 'off',
   'consistent-return': ['error', { treatUndefinedAsUnspecified: false }],
 };
 
 const sharedReactRules = {
-  'react/jsx-filename-extension': 'off',
   'react/react-in-jsx-scope': 'off',
-  'react/prop-types': 'off',
-  'react/jsx-props-no-spreading': 'off',
-  'react/require-default-props': 'off',
   'react/no-unknown-property': [
     'error',
     { ignore: ['stroke-width', 'stroke-linecap', 'stroke-linejoin'] },
@@ -44,7 +39,11 @@ module.exports = {
     {
       files: ['*.ts'],
 
-      extends: ['airbnb-typescript/base', 'plugin:prettier/recommended'],
+      extends: [
+        'airbnb-base',
+        'airbnb-typescript/base',
+        'plugin:prettier/recommended',
+      ],
 
       parserOptions: {
         project: path.resolve('./tsconfig.json'),
@@ -55,7 +54,7 @@ module.exports = {
     {
       files: ['*.tsx'],
 
-      extends: ['airbnb-typescript', 'plugin:prettier/recommended'],
+      extends: ['airbnb', 'airbnb-typescript', 'plugin:prettier/recommended'],
 
       parserOptions: {
         project: path.resolve('./tsconfig.json'),

@@ -7,15 +7,10 @@ const tsProject = ts.createProject('tsconfig.json', {
   emitDeclarationOnly: true,
 });
 
-const compileCode = () =>
-  src('src/**/*')
-    .pipe(babel())
-    .pipe(dest('dist'));
+const compileCode = () => src('src/**/*').pipe(babel()).pipe(dest('dist'));
 
 const generateDeclarations = () =>
-  src('src/**/*')
-    .pipe(tsProject())
-    .pipe(dest('dist'));
+  src('src/**/*').pipe(tsProject()).pipe(dest('dist'));
 
 module.exports = {
   compileCode,
