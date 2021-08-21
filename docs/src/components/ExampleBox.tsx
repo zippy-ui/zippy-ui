@@ -15,6 +15,8 @@ interface SelectOption extends BaseOption {
 interface StringOption extends BaseOption {
   type: 'string';
   default: string;
+  min?: number;
+  max?: number;
 }
 
 interface BooleanOption extends BaseOption {
@@ -67,7 +69,7 @@ export function ExampleBox<Options extends ReadonlyArray<Option>>({
               </label>
               <select
                 id={`option-${option.name}`}
-                className="mt-1 block w-full py-2 px-3 border border-gray-300 dark:bg-gray-600 dark:text-white dark:border-gray-400 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 dark:focus:border-indigo-500 sm:text-base"
+                className="mt-1 block w-full py-2 px-3 border border-gray-300 dark:bg-gray-600 dark:text-white dark:border-gray-400 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 dark:focus:border-indigo-500 text-base"
                 onChange={(e) => setState({ [option.name]: e.target.value })}
                 value={state[option.name]}
               >
@@ -75,6 +77,33 @@ export function ExampleBox<Options extends ReadonlyArray<Option>>({
                   <option value={item.value}>{item.label}</option>
                 ))}
               </select>
+            </div>
+          ) : option.type === 'string' ? (
+            <div className="flex flex-col p-3 w-full border-b border-gray-300 dark:border-gray-700">
+              <label
+                htmlFor={`option-${option.name}`}
+                className="block text-base font-medium text-gray-700 dark:text-white"
+              >
+                {option.label}
+              </label>
+              <input
+                type="text"
+                id={`option-${option.name}`}
+                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm text-base border-gray-300 rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-400 dark:focus:border-indigo-500"
+                value={state[option.name]}
+                minLength={option.min}
+                maxLength={option.max}
+                onInput={(e) => {
+                  const { value } = e.target;
+                  if (option.min && value.length < option.min) {
+                    return;
+                  }
+                  if (option.max && value.length > option.max) {
+                    return;
+                  }
+                  setState({ [option.name]: value });
+                }}
+              />
             </div>
           ) : null,
         )}

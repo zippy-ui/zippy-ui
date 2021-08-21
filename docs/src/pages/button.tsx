@@ -161,9 +161,17 @@ export default function Page() {
             label: 'Size',
             name: 'size',
           },
+          {
+            type: 'string',
+            default: 'Button label',
+            label: 'Content',
+            name: 'content',
+            min: 1,
+            max: 20,
+          },
         ]}
       >
-        {({ startIcon, endIcon, intent, size, variant }) => (
+        {({ startIcon, endIcon, intent, size, variant, content }) => (
           <Button
             intent={intent}
             startIcon={startIcon && DangerIcon}
@@ -171,7 +179,7 @@ export default function Page() {
             size={size}
             variant={variant}
           >
-            Button label
+            {content}
           </Button>
         )}
       </ExampleBox>
