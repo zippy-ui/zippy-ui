@@ -42,10 +42,10 @@ export function ExampleBox<Options extends ReadonlyArray<Option>>({
 
   return (
     <div className="border rounded-md border border-gray-300 flex dark:border-gray-700">
-      <div className="flex w-3/4 items-center justify-center p-3">
+      <div className="flex w-4/6 items-center justify-center p-3">
         {children(state)}
       </div>
-      <aside className="flex flex-col w-1/4 items-start border-l border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-r-md">
+      <aside className="flex flex-col w-2/6 items-start border-l border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-r-md">
         {options.map((option) =>
           option.type === 'boolean' ? (
             <label className="flex items-center text-base font-medium text-gray-700 dark:text-white w-full border-b border-gray-300 dark:border-gray-700 p-3">
