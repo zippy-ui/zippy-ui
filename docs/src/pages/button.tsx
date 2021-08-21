@@ -162,7 +162,7 @@ export default function Page() {
             name: 'size',
           },
           {
-            type: 'string',
+            type: 'text',
             default: 'Button label',
             label: 'Content',
             name: 'content',
