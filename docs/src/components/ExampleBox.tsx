@@ -48,27 +48,15 @@ export function ExampleBox<Options extends ReadonlyArray<Option>>({
       <aside className="flex flex-col w-1/4 items-start border-l border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-r-md">
         {options.map((option) =>
           option.type === 'boolean' ? (
-            <div className="flex items-center w-full border-b border-gray-300 dark:border-gray-700 p-3">
-              <div className="flex items-center h-5">
-                <input
-                  id={`option-${option.name}`}
-                  type="checkbox"
-                  className="focus:ring-indigo-500 dark:ring-offset-gray-800 h-4 w-4 text-indigo-600 border-gray-300 dark:bg-gray-600 dark:border-gray-400 rounded"
-                  onChange={(e) =>
-                    setState({ [option.name]: e.target.checked })
-                  }
-                  checked={state[option.name]}
-                />
-              </div>
-              <div className="ml-3 text-base">
-                <label
-                  htmlFor={`option-${option.name}`}
-                  className="font-medium text-gray-700 dark:text-white"
-                >
-                  {option.label}
-                </label>
-              </div>
-            </div>
+            <label className="flex items-center text-base font-medium text-gray-700 dark:text-white w-full border-b border-gray-300 dark:border-gray-700 p-3">
+              <input
+                type="checkbox"
+                className="focus:ring-indigo-500 dark:ring-offset-gray-800 h-4 w-4 text-indigo-600 border-gray-300 dark:bg-gray-600 dark:border-gray-400 rounded mr-3"
+                onChange={(e) => setState({ [option.name]: e.target.checked })}
+                checked={state[option.name]}
+              />
+              {option.label}
+            </label>
           ) : option.type === 'select' ? (
             <div className="flex flex-col w-full border-b border-gray-300 dark:border-gray-700 p-3">
               <label
