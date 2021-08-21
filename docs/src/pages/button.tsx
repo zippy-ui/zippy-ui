@@ -1,4 +1,6 @@
 import { Button } from '@zippy-ui/core/dist/components/Button';
+import { JSX } from 'solid-js/jsx-runtime';
+import { createStore } from 'solid-js/store';
 
 const ArchiveIcon = () => (
   <svg
@@ -107,230 +109,167 @@ const RightArrow = () => (
   </svg>
 );
 
+interface BaseOption {
+  label: string;
+  name: string;
+}
+
+interface SelectOption extends BaseOption {
+  type: 'select';
+  default: string;
+  items: Array<{ value: string; label: string }>;
+}
+
+interface StringOption extends BaseOption {
+  type: 'string';
+  default: string;
+}
+
+interface BooleanOption extends BaseOption {
+  type: 'boolean';
+  default: boolean;
+}
+
+type Option = StringOption | BooleanOption | SelectOption;
+
+interface Props<Options extends ReadonlyArray<Option>> {
+  children: (options: Record<string, any>) => JSX.Element;
+  options: Options;
+}
+
+function ExampleBox<Options extends ReadonlyArray<Option>>({
+  children,
+  options,
+}: Props<Options>) {
+  const defaultOptions = options.reduce((acc, option) => {
+    acc[option.name] = option.default;
+    return acc;
+  }, {});
+
+  const [state, setState] = createStore(defaultOptions);
+
+  return (
+    <div className="border rounded-md border border-gray-300 flex dark:border-gray-700">
+      <div className="flex w-3/4 items-center justify-center p-3">
+        {children(state)}
+      </div>
+      <aside className="flex flex-col w-1/4 items-start border-l border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-r-md">
+        {options.map((option) =>
+          option.type === 'boolean' ? (
+            <div className="flex items-center w-full border-b border-gray-300 dark:border-gray-700 p-3">
+              <div className="flex items-center h-5">
+                <input
+                  id={`option-${option.name}`}
+                  type="checkbox"
+                  className="focus:ring-indigo-500 dark:ring-offset-gray-800 h-4 w-4 text-indigo-600 border-gray-300 dark:bg-gray-600 dark:border-gray-400 rounded"
+                  onChange={(e) =>
+                    setState({ [option.name]: e.target.checked })
+                  }
+                  checked={state[option.name]}
+                />
+              </div>
+              <div className="ml-3 text-base">
+                <label
+                  htmlFor={`option-${option.name}`}
+                  className="font-medium text-gray-700 dark:text-white"
+                >
+                  {option.label}
+                </label>
+              </div>
+            </div>
+          ) : option.type === 'select' ? (
+            <div className="flex flex-col w-full border-b border-gray-300 dark:border-gray-700 p-3">
+              <label
+                htmlFor={`option-${option.name}`}
+                className="block text-base font-medium text-gray-700 dark:text-white"
+              >
+                {option.label}
+              </label>
+              <select
+                id={`option-${option.name}`}
+                className="mt-1 block w-full py-2 px-3 border border-gray-300 dark:bg-gray-600 dark:text-white dark:border-gray-400 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 dark:focus:border-indigo-500 sm:text-base"
+                onChange={(e) => setState({ [option.name]: e.target.value })}
+                value={state[option.name]}
+              >
+                {option.items.map((item) => (
+                  <option value={item.value}>{item.label}</option>
+                ))}
+              </select>
+            </div>
+          ) : null,
+        )}
+      </aside>
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <>
       <h2>Button</h2>
 
-      <h3>Intent: Danger</h3>
-
-      <h4>Variant: Solid</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button sx={{ mr: 2 }} intent="danger">
-          Remove user
-        </Button>
-
-        <Button sx={{ mr: 2 }} intent="danger" startIcon={DangerIcon}>
-          Remove user
-        </Button>
-
-        <Button intent="danger" startIcon={DangerIcon} endIcon={RightArrow}>
-          Remove user
-        </Button>
-      </div>
-
-      <h4>Variant: Outlined</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button variant="outlined" intent="danger" sx={{ mr: 2 }}>
-          Remove user
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="danger"
-          sx={{ mr: 2 }}
-          startIcon={DangerIcon}
-        >
-          Remove user
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="danger"
-          startIcon={DangerIcon}
-          endIcon={RightArrow}
-        >
-          Remove user
-        </Button>
-      </div>
-
-      <h3>Intent: Success</h3>
-
-      <h4>Variant: Solid</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button sx={{ mr: 2 }} intent="success">
-          Save user
-        </Button>
-
-        <Button sx={{ mr: 2 }} intent="success" startIcon={SaveIcon}>
-          Save user
-        </Button>
-
-        <Button intent="success" startIcon={SaveIcon} endIcon={RightArrow}>
-          Save user
-        </Button>
-      </div>
-
-      <h4>Variant: Outlined</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button variant="outlined" intent="success" sx={{ mr: 2 }}>
-          Save user
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="success"
-          sx={{ mr: 2 }}
-          startIcon={SaveIcon}
-        >
-          Save user
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="success"
-          startIcon={SaveIcon}
-          endIcon={RightArrow}
-        >
-          Save user
-        </Button>
-      </div>
-
-      <h3>Intent: Warning</h3>
-
-      <h4>Variant: Solid</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button sx={{ mr: 2 }} intent="warning">
-          Confirm operation
-        </Button>
-
-        <Button sx={{ mr: 2 }} intent="warning" startIcon={WarningIcon}>
-          Confirm operation
-        </Button>
-
-        <Button intent="warning" startIcon={WarningIcon} endIcon={RightArrow}>
-          Confirm operation
-        </Button>
-      </div>
-
-      <h4>Variant: Outlined</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button variant="outlined" intent="warning" sx={{ mr: 2 }}>
-          Confirm operation
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="warning"
-          sx={{ mr: 2 }}
-          startIcon={WarningIcon}
-        >
-          Confirm operation
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="warning"
-          startIcon={WarningIcon}
-          endIcon={RightArrow}
-        >
-          Confirm operation
-        </Button>
-      </div>
-
-      <h3>Intent: Info</h3>
-
-      <h4>Variant: Solid</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button sx={{ mr: 2 }} intent="info">
-          Load data
-        </Button>
-
-        <Button sx={{ mr: 2 }} intent="info" startIcon={InfoIcon}>
-          Load data
-        </Button>
-
-        <Button intent="info" startIcon={InfoIcon} endIcon={RightArrow}>
-          Load data
-        </Button>
-      </div>
-
-      <h4>Variant: Outlined</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button variant="outlined" intent="info" sx={{ mr: 2 }}>
-          Load data
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="info"
-          sx={{ mr: 2 }}
-          startIcon={InfoIcon}
-        >
-          Load data
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="info"
-          startIcon={InfoIcon}
-          endIcon={RightArrow}
-        >
-          Load data
-        </Button>
-      </div>
-
-      <h3>Intent: None</h3>
-
-      <h4>Variant: Solid</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button sx={{ mr: 2 }} intent="none">
-          Archive data
-        </Button>
-
-        <Button sx={{ mr: 2 }} intent="none" startIcon={ArchiveIcon}>
-          Archive data
-        </Button>
-
-        <Button intent="none" startIcon={ArchiveIcon} endIcon={RightArrow}>
-          Archive data
-        </Button>
-      </div>
-
-      <h4>Variant: Outlined</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700">
-        <Button variant="outlined" intent="none" sx={{ mr: 2 }}>
-          Archive data
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="none"
-          sx={{ mr: 2 }}
-          startIcon={ArchiveIcon}
-        >
-          Archive data
-        </Button>
-
-        <Button
-          variant="outlined"
-          intent="none"
-          startIcon={ArchiveIcon}
-          endIcon={RightArrow}
-        >
-          Archive data
-        </Button>
-      </div>
+      <ExampleBox
+        options={[
+          {
+            type: 'boolean',
+            default: false,
+            label: 'Start icon',
+            name: 'startIcon',
+          },
+          {
+            type: 'boolean',
+            default: false,
+            label: 'End icon',
+            name: 'endIcon',
+          },
+          {
+            type: 'select',
+            default: 'solid',
+            items: [
+              { value: 'outlined', label: 'Outlined' },
+              { value: 'solid', label: 'Solid' },
+            ],
+            label: 'Variant',
+            name: 'variant',
+          },
+          {
+            type: 'select',
+            default: 'danger',
+            items: [
+              { value: 'danger', label: 'Danger' },
+              { value: 'success', label: 'Success' },
+              { value: 'warning', label: 'Warning' },
+              { value: 'info', label: 'Info' },
+              { value: 'none', label: 'None' },
+            ],
+            label: 'Intent',
+            name: 'intent',
+          },
+          {
+            type: 'select',
+            default: 'default',
+            items: [
+              { value: 'small', label: 'Small' },
+              { value: 'default', label: 'Default' },
+              { value: 'large', label: 'Large' },
+            ],
+            label: 'Size',
+            name: 'size',
+          },
+        ]}
+      >
+        {({ startIcon, endIcon, intent, size, variant }) => (
+          <Button
+            intent={intent}
+            startIcon={startIcon && DangerIcon}
+            endIcon={endIcon && RightArrow}
+            size={size}
+            variant={variant}
+          >
+            Button label
+          </Button>
+        )}
+      </ExampleBox>
     </>
   );
 }
