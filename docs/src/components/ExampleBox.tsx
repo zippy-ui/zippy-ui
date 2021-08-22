@@ -47,7 +47,7 @@ function BooleanOpt({
     <label className="flex items-center text-base font-medium text-gray-700 dark:text-white w-full border-b border-gray-300 dark:border-gray-700 p-3">
       <input
         type="checkbox"
-        className="focus:ring-indigo-500 dark:ring-offset-gray-800 h-4 w-4 text-indigo-600 border-gray-300 dark:bg-gray-600 dark:border-gray-400 rounded mr-3"
+        className="focus:ring-indigo-500 dark:ring-offset-gray-800 h-4 w-4 text-indigo-600 border-gray-300 dark:bg-gray-600 dark:border-gray-400 rounded shadow-sm mr-3"
         onChange={(e) => setValue(e.currentTarget.checked)}
         checked={value}
       />
