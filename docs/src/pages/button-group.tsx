@@ -1,116 +1,88 @@
 import { Button } from '@zippy-ui/core/dist/components/Button';
 import { ButtonGroup } from '@zippy-ui/core/dist/components/ButtonGroup';
+import { ExampleBox } from '../components/ExampleBox';
 
 export default function Page() {
+  const allIntents = ['danger', 'warning', 'success', 'info', 'none'];
+
   return (
     <>
-      <h3>Button group</h3>
+      <h2>Button group</h2>
 
-      <h4>Outlined</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger" variant="outlined">
-            outlined danger
-          </Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger" variant="outlined">
-            outlined danger
-          </Button>
-          <Button intent="success" variant="outlined">
-            outlined success
-          </Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger" variant="outlined">
-            outlined danger
-          </Button>
-          <Button intent="success" variant="outlined">
-            outlined success
-          </Button>
-          <Button intent="warning" variant="outlined">
-            outlined warning
-          </Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger" variant="outlined">
-            outlined danger
-          </Button>
-          <Button intent="success" variant="outlined">
-            outlined success
-          </Button>
-          <Button intent="warning" variant="outlined">
-            outlined warning
-          </Button>
-          <Button intent="info" variant="outlined">
-            outlined info
-          </Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger" variant="outlined">
-            outlined danger
-          </Button>
-          <Button intent="success" variant="outlined">
-            outlined success
-          </Button>
-          <Button intent="warning" variant="outlined">
-            outlined warning
-          </Button>
-          <Button intent="info" variant="outlined">
-            outlined info
-          </Button>
-          <Button intent="none" variant="outlined">
-            outlined none
-          </Button>
-        </ButtonGroup>
-      </div>
-
-      <h4>Solid</h4>
-
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger">outlined danger</Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger">outlined danger</Button>
-          <Button intent="success">outlined success</Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger">outlined danger</Button>
-          <Button intent="success">outlined success</Button>
-          <Button intent="warning">outlined warning</Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger">outlined danger</Button>
-          <Button intent="success">outlined success</Button>
-          <Button intent="warning">outlined warning</Button>
-          <Button intent="info">outlined info</Button>
-        </ButtonGroup>
-      </div>
-      <div className="border rounded-md border-1 border-gray-300 p-3 flex dark:border-gray-700 mt-4">
-        <ButtonGroup>
-          <Button intent="danger">outlined danger</Button>
-          <Button intent="success">outlined success</Button>
-          <Button intent="warning">outlined warning</Button>
-          <Button intent="info">outlined info</Button>
-          <Button intent="none">outlined none</Button>
-        </ButtonGroup>
-      </div>
+      <ExampleBox
+        options={[
+          {
+            type: 'select',
+            default: 3,
+            items: [
+              { value: 1, label: '1' },
+              { value: 2, label: '2' },
+              { value: 3, label: '3' },
+              { value: 4, label: '4' },
+              { value: 5, label: '5' },
+            ],
+            label: 'Count',
+            name: 'count',
+          },
+          {
+            type: 'select',
+            default: 'solid',
+            items: [
+              { value: 'outlined', label: 'Outlined' },
+              { value: 'solid', label: 'Solid' },
+            ],
+            label: 'Variant',
+            name: 'variant',
+          },
+          {
+            type: 'select',
+            default: 'danger',
+            items: [
+              { value: 'mixed', label: 'Mixed' },
+              { value: 'danger', label: 'Danger' },
+              { value: 'success', label: 'Success' },
+              { value: 'warning', label: 'Warning' },
+              { value: 'info', label: 'Info' },
+              { value: 'none', label: 'None' },
+            ],
+            label: 'Intent',
+            name: 'intent',
+          },
+          {
+            type: 'select',
+            default: 'default',
+            items: [
+              { value: 'small', label: 'Small' },
+              { value: 'default', label: 'Default' },
+              { value: 'large', label: 'Large' },
+            ],
+            label: 'Size',
+            name: 'size',
+          },
+          {
+            type: 'text',
+            default: 'Button',
+            label: 'Content',
+            name: 'content',
+            min: 1,
+            max: 20,
+          },
+        ]}
+      >
+        {({ count, intent, size, variant, content }) => (
+          <ButtonGroup>
+            {Array.from({ length: count }).map((_, i) => (
+              <Button
+                intent={intent === 'mixed' ? allIntents[i] : intent}
+                size={size}
+                variant={variant}
+              >
+                {content}
+              </Button>
+            ))}
+          </ButtonGroup>
+        )}
+      </ExampleBox>
     </>
   );
 }
