@@ -4,6 +4,7 @@ import Index from './pages/index';
 import Badge from './pages/badge';
 import Button from './pages/button';
 import ButtonGroup from './pages/button-group';
+import Alert from './pages/alert';
 import Components from './pages/components';
 
 const routes = [
@@ -15,6 +16,10 @@ const routes = [
     path: '/components',
     component: Components,
     children: [
+      {
+        path: 'alert',
+        component: Alert,
+      },
       {
         path: 'badge',
         component: Badge,

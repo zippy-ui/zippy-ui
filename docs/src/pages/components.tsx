@@ -8,6 +8,13 @@ export default function Components() {
           Components
         </h5>
         <NavLink
+          href="/components/alert"
+          class="hover:bg-gray-300 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium dark:hover:bg-gray-800 dark:hover:text-white"
+          activeClass="bg-blue-600 text-white hover:bg-blue-700 hover:text-white dark:hover:bg-blue-700"
+        >
+          Alert
+        </NavLink>
+        <NavLink
           href="/components/badge"
           class="hover:bg-gray-300 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium dark:hover:bg-gray-800 dark:hover:text-white"
           activeClass="bg-blue-600 text-white hover:bg-blue-700 hover:text-white dark:hover:bg-blue-700"
