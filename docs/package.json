@@ -17,7 +17,7 @@
     "babel-preset-solid": "^1.1.0",
     "clsx": "^1.1.1",
     "postcss": "^8.3.6",
-    "solid-app-router": "^0.1.4",
+    "solid-app-router": "^0.1.5",
     "solid-js": "^1.1.0",
     "tailwindcss": "^2.2.7",
     "vite": "^2.4.4",
