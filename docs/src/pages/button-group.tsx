@@ -7,7 +7,7 @@ export default function Page() {
 
   return (
     <>
-      <h2>Button group</h2>
+      <h2 className="text-3xl font-bold mb-4">Button group</h2>
 
       <ExampleBox
         options={[

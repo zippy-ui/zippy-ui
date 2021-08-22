@@ -111,7 +111,7 @@ const RightArrow = () => (
 export default function Page() {
   return (
     <>
-      <h2>Button</h2>
+      <h2 className="text-3xl font-bold mb-4">Button</h2>
 
       <ExampleBox
         options={[

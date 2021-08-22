@@ -4,7 +4,7 @@ import { ExampleBox } from '../components/ExampleBox';
 export default function Page() {
   return (
     <>
-      <h2>Badge</h2>
+      <h2 className="text-3xl font-bold mb-4">Badge</h2>
 
       <ExampleBox
         options={[

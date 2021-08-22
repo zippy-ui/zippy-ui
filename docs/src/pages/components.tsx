@@ -30,7 +30,7 @@ export default function Components() {
           Button group
         </NavLink>
       </div>
-      <article className="prose prose-xl flex-1">
+      <article className="flex-1">
         <Outlet />
       </article>
     </>
