@@ -9,7 +9,7 @@ export const root = style({
   display: 'flex',
   lineHeight: 1.5,
   fontSize: '16px',
-  backgroundColor: rgbVar(colorVar, 0.1),
+  backgroundColor: rgbVar(colorVar, 0.2),
   borderRadius: '0.2em',
   border: `1px solid ${rgbVar(colorVar, 0.5)}`,
   width: '100%',
@@ -59,12 +59,28 @@ export const intents = styleVariants({
       [colorVar]: vars.color['blue-600'],
       [textColorVar]: vars.color['blue-900'],
     },
+
+    selectors: {
+      [`.dark &`]: {
+        vars: {
+          [textColorVar]: vars.color['blue-100'],
+        },
+      },
+    },
   },
 
   warning: {
     vars: {
       [colorVar]: vars.color['amber-600'],
       [textColorVar]: vars.color['amber-900'],
+    },
+
+    selectors: {
+      [`.dark &`]: {
+        vars: {
+          [textColorVar]: vars.color['amber-100'],
+        },
+      },
     },
   },
 
@@ -73,6 +89,14 @@ export const intents = styleVariants({
       [colorVar]: vars.color['red-600'],
       [textColorVar]: vars.color['red-900'],
     },
+
+    selectors: {
+      [`.dark &`]: {
+        vars: {
+          [textColorVar]: vars.color['red-100'],
+        },
+      },
+    },
   },
 
   success: {
@@ -80,12 +104,28 @@ export const intents = styleVariants({
       [colorVar]: vars.color['emerald-700'],
       [textColorVar]: vars.color['emerald-900'],
     },
+
+    selectors: {
+      [`.dark &`]: {
+        vars: {
+          [textColorVar]: vars.color['emerald-100'],
+        },
+      },
+    },
   },
 
   none: {
     vars: {
       [colorVar]: vars.color['coolGray-500'],
       [textColorVar]: vars.color['coolGray-900'],
+    },
+
+    selectors: {
+      [`.dark &`]: {
+        vars: {
+          [textColorVar]: vars.color['coolGray-100'],
+        },
+      },
     },
   },
 });
