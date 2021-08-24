@@ -40,16 +40,6 @@ export default function Page() {
           },
           {
             type: 'select',
-            default: 'solid',
-            items: [
-              { value: 'outlined', label: 'Outlined' },
-              { value: 'solid', label: 'Solid' },
-            ],
-            label: 'Variant',
-            name: 'variant',
-          },
-          {
-            type: 'select',
             default: 'info',
             items: [
               { value: 'danger', label: 'Danger' },
@@ -74,12 +64,11 @@ export default function Page() {
           },
         ]}
       >
-        {({ icon, title, intent, size, variant }) => (
+        {({ icon, title, intent, size }) => (
           <Alert
             title={title && 'Test title'}
             intent={intent}
             size={size}
-            variant={variant}
             icon={icon && WarningIcon}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
