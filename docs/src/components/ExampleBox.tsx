@@ -1,6 +1,5 @@
 import type { JSX } from 'solid-js/jsx-runtime';
 import { createStore } from 'solid-js/store';
-import { Dynamic } from 'solid-js/web';
 
 interface BaseOption {
   label: string;
@@ -9,8 +8,8 @@ interface BaseOption {
 
 interface SelectOption extends BaseOption {
   type: 'select';
-  default: string;
-  items: Array<{ value: string; label: string }>;
+  default: string | number;
+  items: Array<{ value: string | number; label: string }>;
 }
 
 interface TextOption extends BaseOption {
