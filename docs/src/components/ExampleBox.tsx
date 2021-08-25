@@ -142,15 +142,34 @@ export function ExampleBox<Options extends ReadonlyArray<Option>>({
       </div>
       <aside className="flex flex-col w-2/6 items-start border-l border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 rounded-r-md">
         {options.map((option) => {
-          const Component = componentMap[option.type];
+          // eslint-disable-next-line default-case
+          switch (option.type) {
+            case 'boolean':
+              return (
+                <BooleanOpt
+                  option={option}
+                  value={state[option.name]}
+                  setValue={(newValue) => setState({ [option.name]: newValue })}
+                />
+              );
 
-          return (
-            <Component
-              option={option}
-              value={state[option.name]}
-              setValue={(newValue) => setState({ [option.name]: newValue })}
-            />
-          );
+            case 'text':
+              return (
+                <TextOpt
+                  option={option}
+                  value={state[option.name]}
+                  setValue={(newValue) => setState({ [option.name]: newValue })}
+                />
+              );
+            case 'select':
+              return (
+                <SelectOpt
+                  option={option}
+                  value={state[option.name]}
+                  setValue={(newValue) => setState({ [option.name]: newValue })}
+                />
+              );
+          }
         })}
       </aside>
     </div>
