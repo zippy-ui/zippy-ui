@@ -33,7 +33,7 @@ export const content = style({
 export const heading = style({
   margin: '0 0 .5rem',
   fontWeight: 'bold',
-  fontSize: '1.2rem',
+  fontSize: '1.2em',
   lineHeight: 1,
 });
 
