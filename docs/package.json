@@ -19,7 +19,7 @@
     "solid-app-router": "^0.1.5",
     "solid-js": "^1.1.0",
     "tailwindcss": "^2.2.9",
-    "vite": "2.5.1",
+    "vite": "2.5.2",
     "vite-plugin-solid": "^2.0.3"
   }
 }
