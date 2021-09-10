@@ -1,12 +1,12 @@
 import type { JSX } from 'solid-js/jsx-runtime';
 import * as styles from './Alert.css';
-import type { Sizes, Intents } from './Alert.css';
+import type { Variants } from './Alert.css';
 import { atoms, Atoms } from '../../styles/sprinkles.css';
 
 export interface AlertProps {
-  size?: Sizes;
+  size?: Variants['size'];
   sx?: Atoms;
-  intent?: Intents;
+  intent?: Variants['intent'];
   children: any;
   icon?: any;
   onClick?: () => void;
@@ -17,24 +17,17 @@ export interface AlertProps {
 }
 
 export function Alert(props: AlertProps) {
-  const {
-    children,
-    size = 'default',
-    intent = 'none',
-    icon,
-    sx = {},
-    title,
-    actions,
-  } = props;
+  const { children, size, intent, icon, sx = {}, title, actions } = props;
   const className = atoms(sx);
 
   return (
     <div
       role="alert"
-      className={styles.root}
+      className={styles.root({
+        size,
+        intent,
+      })}
       classList={{
-        [styles.sizes[size]]: true,
-        [styles.intents[intent]]: typeof intent !== 'undefined',
         [className]: typeof sx !== 'undefined',
       }}
     >
