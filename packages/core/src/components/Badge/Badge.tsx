@@ -1,32 +1,27 @@
 import * as styles from './Badge.css';
-import type { Sizes, Variants, Intents } from './Badge.css';
+import type { Variants } from './Badge.css';
 import { atoms, Atoms } from '../../styles/sprinkles.css';
 
 export interface BadgeProps {
-  size?: Sizes;
+  size?: Variants['size'];
   sx?: Atoms;
-  intent?: Intents;
-  variant?: Variants;
+  intent?: Variants['intent'];
+  variant?: Variants['variant'];
   children: any;
 }
 
 export function Badge(props: BadgeProps) {
-  const {
-    children,
-    variant = 'solid',
-    size = 'default',
-    intent = 'none',
-    sx = {},
-  } = props;
+  const { children, variant, size, intent, sx = {} } = props;
   const className = atoms(sx);
 
   return (
     <span
-      className={styles.root}
+      className={styles.root({
+        variant,
+        size,
+        intent,
+      })}
       classList={{
-        [styles.sizes[size]]: true,
-        [styles.variants[variant]]: true,
-        [styles.intents[intent]]: typeof intent !== 'undefined',
         [className]: typeof sx !== 'undefined',
       }}
     >

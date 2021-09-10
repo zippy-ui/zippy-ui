@@ -1,220 +1,255 @@
-import { createVar, style, styleVariants } from '@vanilla-extract/css';
+import { createVar, style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 import { rgbVar, vars } from '../../styles/vars.css';
 
 const textColorVar = createVar();
 const bgColorVar = createVar();
 const bgOpacityVar = createVar();
 
-export const root = style({
-  display: 'inline-block',
-  whiteSpace: 'nowrap',
-  borderRadius: '.25rem',
-  lineHeight: 1,
-  padding: '.45em .65em',
-  fontWeight: 700,
-  border: 0,
-  color: rgbVar(textColorVar),
-  backgroundColor: rgbVar(bgColorVar, bgOpacityVar),
-});
+export const root = recipe({
+  base: {
+    display: 'inline-block',
+    whiteSpace: 'nowrap',
+    borderRadius: '.25rem',
+    lineHeight: 1,
+    padding: '.45em .65em',
+    fontWeight: 700,
+    border: 0,
+    color: rgbVar(textColorVar),
+    backgroundColor: rgbVar(bgColorVar, bgOpacityVar),
+  },
 
-export const sizes = styleVariants({
-  small: {
-    fontSize: '.5em',
+  defaultVariants: {
+    size: 'default',
+    intent: 'success',
+    variant: 'solid',
   },
-  default: {
-    fontSize: '.75em',
-  },
-  large: {
-    fontSize: '1em',
-  },
-});
 
-export type Sizes = keyof typeof sizes;
-
-export const variants = styleVariants({
-  solid: {
-    vars: {
-      [textColorVar]: vars.color.white,
-      [bgOpacityVar]: '1',
-    },
-  },
-  outlined: {
-    boxShadow: `inset 0 0 0 1px ${rgbVar(bgColorVar)}`,
-    vars: {
-      [bgOpacityVar]: '0',
-    },
-  },
-  subtle: {
-    vars: {
-      [bgOpacityVar]: '0.2',
-    },
-    selectors: {
-      [`.dark &`]: {
-        vars: {
-          [bgOpacityVar]: '0.4',
-        },
+  variants: {
+    size: {
+      small: {
+        fontSize: '.5em',
+      },
+      default: {
+        fontSize: '.75em',
+      },
+      large: {
+        fontSize: '1em',
       },
     },
-  },
-});
 
-export type Variants = keyof typeof variants;
-
-export const intents = styleVariants({
-  success: {
-    vars: {
-      [bgColorVar]: vars.color['emerald-700'],
+    variant: {
+      solid: style({
+        vars: {
+          [textColorVar]: vars.color.white,
+          [bgOpacityVar]: '1',
+        },
+      }),
+      outlined: style({
+        boxShadow: `inset 0 0 0 1px ${rgbVar(bgColorVar)}`,
+        vars: {
+          [bgOpacityVar]: '0',
+        },
+      }),
+      subtle: style({
+        vars: {
+          [bgOpacityVar]: '0.2',
+        },
+        selectors: {
+          [`.dark &`]: {
+            vars: {
+              [bgOpacityVar]: '0.4',
+            },
+          },
+        },
+      }),
     },
-    selectors: {
-      [`${variants.outlined}&`]: {
+
+    intent: {
+      success: style({
+        vars: {
+          [bgColorVar]: vars.color['emerald-700'],
+        },
+        selectors: {
+          [`.dark &`]: {
+            vars: {
+              [textColorVar]: vars.color['emerald-100'],
+            },
+          },
+        },
+      }),
+
+      danger: style({
+        vars: {
+          [bgColorVar]: vars.color['red-600'],
+        },
+        selectors: {
+          [`.dark &`]: {
+            vars: {
+              [textColorVar]: vars.color['red-100'],
+            },
+          },
+        },
+      }),
+
+      warning: style({
+        vars: {
+          [bgColorVar]: vars.color['amber-600'],
+        },
+        selectors: {
+          [`.dark &`]: {
+            vars: {
+              [textColorVar]: vars.color['amber-100'],
+            },
+          },
+        },
+      }),
+
+      info: style({
+        vars: {
+          [bgColorVar]: vars.color['blue-600'],
+        },
+        selectors: {
+          [`.dark &`]: {
+            vars: {
+              [textColorVar]: vars.color['blue-100'],
+            },
+          },
+        },
+      }),
+
+      none: style({
+        vars: {
+          [bgColorVar]: vars.color['coolGray-500'],
+        },
+        selectors: {
+          [`.dark &`]: {
+            vars: {
+              [textColorVar]: vars.color['coolGray-100'],
+            },
+          },
+        },
+      }),
+    },
+  },
+
+  compoundVariants: [
+    {
+      variants: {
+        variant: 'outlined',
+        intent: 'success',
+      },
+      style: {
         vars: {
           [textColorVar]: vars.color['emerald-800'],
         },
       },
+    },
 
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color['emerald-100'],
-        },
+    {
+      variants: {
+        variant: 'subtle',
+        intent: 'success',
       },
-
-      [`${variants.subtle}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['emerald-900'],
         },
       },
+    },
 
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color['emerald-100'],
-        },
+    {
+      variants: {
+        variant: 'outlined',
+        intent: 'danger',
       },
-    },
-  },
-
-  danger: {
-    vars: {
-      [bgColorVar]: vars.color['red-600'],
-    },
-    selectors: {
-      [`${variants.outlined}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['red-700'],
         },
       },
-
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color['red-100'],
-        },
+    },
+    {
+      variants: {
+        variant: 'subtle',
+        intent: 'danger',
       },
-
-      [`${variants.subtle}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['red-900'],
         },
       },
+    },
 
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color['red-100'],
-        },
+    {
+      variants: {
+        variant: 'outlined',
+        intent: 'warning',
       },
-    },
-  },
-
-  warning: {
-    vars: {
-      [bgColorVar]: vars.color['amber-600'],
-    },
-    selectors: {
-      [`${variants.outlined}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['amber-700'],
         },
       },
-
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color['amber-100'],
-        },
+    },
+    {
+      variants: {
+        variant: 'subtle',
+        intent: 'warning',
       },
-
-      [`${variants.subtle}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['amber-900'],
         },
       },
+    },
 
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color['amber-100'],
-        },
+    {
+      variants: {
+        variant: 'outlined',
+        intent: 'info',
       },
-    },
-  },
-
-  info: {
-    vars: {
-      [bgColorVar]: vars.color['blue-600'],
-    },
-    selectors: {
-      [`${variants.outlined}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['blue-700'],
         },
       },
-
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color['blue-100'],
-        },
+    },
+    {
+      variants: {
+        variant: 'subtle',
+        intent: 'info',
       },
-
-      [`${variants.subtle}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['blue-900'],
         },
       },
+    },
 
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color['blue-100'],
-        },
+    {
+      variants: {
+        variant: 'outlined',
+        intent: 'none',
       },
-    },
-  },
-
-  none: {
-    vars: {
-      [bgColorVar]: vars.color['coolGray-500'],
-    },
-    selectors: {
-      [`${variants.outlined}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['coolGray-600'],
         },
       },
-
-      [`.dark ${variants.outlined}&`]: {
-        vars: {
-          [textColorVar]: vars.color['coolGray-100'],
-        },
+    },
+    {
+      variants: {
+        variant: 'subtle',
+        intent: 'none',
       },
-
-      [`${variants.subtle}&`]: {
+      style: {
         vars: {
           [textColorVar]: vars.color['coolGray-900'],
         },
       },
-
-      [`.dark ${variants.subtle}&`]: {
-        vars: {
-          [textColorVar]: vars.color['coolGray-100'],
-        },
-      },
     },
-  },
+  ],
 });
 
-export type Intents = keyof typeof intents;
+export type Variants = Parameters<typeof root>[0];
