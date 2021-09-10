@@ -2,16 +2,17 @@
   "name": "@zippy-ui/core",
   "version": "0.0.1",
   "dependencies": {
-    "@vanilla-extract/css": "^1.3.0",
-    "@vanilla-extract/sprinkles": "^1.1.1",
-    "solid-js": "^1.1.0"
+    "@vanilla-extract/css": "^1.5.0",
+    "@vanilla-extract/recipes": "^0.1.0",
+    "@vanilla-extract/sprinkles": "^1.2.0",
+    "solid-js": "^1.1.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.15.5",
     "@babel/preset-typescript": "^7.15.0",
-    "@vanilla-extract/babel-plugin": "^1.0.1",
+    "@vanilla-extract/babel-plugin": "^1.1.0",
     "babel-loader": "^8.2.2",
-    "babel-preset-solid": "^1.1.0",
+    "babel-preset-solid": "^1.1.3",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-typescript": "^6.0.0-alpha.1"
