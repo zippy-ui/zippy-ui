@@ -1,12 +1,12 @@
 import * as styles from './Button.css';
-import type { Sizes, Variants, Intents } from './Button.css';
+import type { Variants } from './Button.css';
 import { atoms, Atoms } from '../../styles/sprinkles.css';
 
 export interface ButtonProps {
-  size?: Sizes;
+  size?: Variants['size'];
   sx?: Atoms;
-  intent?: Intents;
-  variant?: Variants;
+  intent?: Variants['intent'];
+  variant?: Variants['variant'];
   children: any;
   startIcon?: any;
   endIcon?: any;
@@ -18,9 +18,9 @@ export interface ButtonProps {
 export function Button(props: ButtonProps) {
   const {
     children,
-    variant = 'solid',
-    size = 'default',
-    intent = 'none',
+    variant,
+    size,
+    intent,
     startIcon,
     endIcon,
     sx = {},
@@ -30,11 +30,12 @@ export function Button(props: ButtonProps) {
   return (
     <button
       type="button"
-      className={styles.root}
+      className={styles.root({
+        size,
+        variant,
+        intent,
+      })}
       classList={{
-        [styles.sizes[size]]: true,
-        [styles.variants[variant]]: true,
-        [styles.intents[intent]]: typeof intent !== 'undefined',
         [className]: typeof sx !== 'undefined',
       }}
     >
