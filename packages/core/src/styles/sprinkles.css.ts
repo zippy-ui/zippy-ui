@@ -1,4 +1,4 @@
-import { createAtomicStyles, createAtomsFn } from '@vanilla-extract/sprinkles';
+import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
 import { vars } from './vars.css';
 
 const space = {
@@ -39,7 +39,7 @@ const space = {
   '96': '24rem',
 };
 
-const spaceAtoms = createAtomicStyles({
+const spaceAtoms = defineProperties({
   conditions: {
     mobile: {},
     tablet: { '@media': 'screen and (min-width: 768px)' },
@@ -77,7 +77,7 @@ const spaceAtoms = createAtomicStyles({
 export const lightMode = 'light';
 export const darkMode = 'dark';
 
-const colorAtoms = createAtomicStyles({
+const colorAtoms = defineProperties({
   conditions: {
     lightMode: {},
     darkMode: {
@@ -95,6 +95,6 @@ const colorAtoms = createAtomicStyles({
   },
 });
 
-export const atoms = createAtomsFn(colorAtoms, spaceAtoms);
+export const atoms = createSprinkles(colorAtoms, spaceAtoms);
 
 export type Atoms = Parameters<typeof atoms>[0];
