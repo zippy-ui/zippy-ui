@@ -2,10 +2,10 @@
   "name": "@zippy-ui/core",
   "version": "0.0.1",
   "dependencies": {
-    "@vanilla-extract/css": "^1.5.0",
+    "@vanilla-extract/css": "^1.6.0",
     "@vanilla-extract/recipes": "^0.1.0",
-    "@vanilla-extract/sprinkles": "^1.2.0",
-    "solid-js": "^1.1.3"
+    "@vanilla-extract/sprinkles": "^1.3.0",
+    "solid-js": "^1.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
