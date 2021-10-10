@@ -119,7 +119,7 @@ export const root = recipe({
   },
 });
 
-export type Variants = Parameters<typeof root>[0];
+export type Variants = RecipeVariants<typeof root>;
 
 export const icon = style({});
 

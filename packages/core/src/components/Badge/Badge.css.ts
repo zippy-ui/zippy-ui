@@ -1,5 +1,5 @@
 import { createVar, style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { rgbVar, vars } from '../../styles/vars.css';
 
 const textColorVar = createVar();
@@ -252,4 +252,4 @@ export const root = recipe({
   ],
 });
 
-export type Variants = Parameters<typeof root>[0];
+export type Variants = RecipeVariants<typeof root>;
